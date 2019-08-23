@@ -1,14 +1,14 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+
+import { NAVIGATION } from "../constants";
+
+import {NavigationContext} from '../pages/index'
 
 
 const Header = ({ siteTitle }: any) => (
   <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
+    style={{ display: 'flex' }}
   >
     <div
       style={{
@@ -17,18 +17,34 @@ const Header = ({ siteTitle }: any) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+      <h1 style={{ margin: 0,
+            textDecoration: `none`, }}>
+
           {siteTitle}
-        </Link>
       </h1>
+
+      <h1>Full Stack Developer</h1>
+      
     </div>
+    <NavigationContext.Consumer>
+    {(gotoNavigation: any) => (<nav style={{ display: 'flex'}}>
+      <div onClick={() => gotoNavigation(NAVIGATION.ABOUT)}>
+        <h3>About</h3>
+      </div>
+
+      <div onClick={() => gotoNavigation(NAVIGATION.EXPERIENCE)}>
+        <h3>Experience</h3>
+      </div>
+
+      <div onClick={() => gotoNavigation(NAVIGATION.PROJECTS)}>
+        <h3>Projects</h3>
+      </div>
+
+      <div onClick={() => gotoNavigation(NAVIGATION.SKILLS)}>
+        <h3>Skills</h3>
+      </div>
+    </nav>)}
+    </NavigationContext.Consumer>
   </header>
 )
 
