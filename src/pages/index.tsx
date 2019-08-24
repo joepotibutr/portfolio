@@ -16,16 +16,27 @@ const projectsRef: React.RefObject<HTMLDivElement> = React.createRef()
 const skillsRef : React.RefObject<HTMLDivElement>= React.createRef()
 
 const gotoNavigation = (destination: NAVIGATION) => {
+  let destinationRef: React.RefObject<HTMLDivElement> | undefined
+
   switch(destination) {
     case NAVIGATION.ABOUT :
-      return aboutRef.current && window.scrollTo(0, aboutRef.current.offsetTop)
+      destinationRef = aboutRef
+      break
     case NAVIGATION.SKILLS :
-      return skillsRef.current && window.scrollTo(0, skillsRef.current.offsetTop)
+      destinationRef = skillsRef
+      break
     case NAVIGATION.EXPERIENCE : 
-      return expRef.current && window.scrollTo(0, expRef.current.offsetTop)
+      destinationRef = expRef
+      break
     case NAVIGATION.PROJECTS : 
-      return projectsRef.current && window.scrollTo(0, projectsRef.current.offsetTop)
+      destinationRef = projectsRef
+      break
   }
+  
+  return destinationRef && destinationRef.current && window.scrollTo({
+    top: destinationRef.current!.offsetTop,
+    behavior: 'smooth'
+  })
 }
 
 export const NavigationContext = React.createContext(gotoNavigation)
