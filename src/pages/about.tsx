@@ -16,10 +16,9 @@ export default class About extends Component<Props, State> {
 <div>
 <section>
           <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-   <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum gravida mi id consequat. Nunc sodales auctor libero, tincidunt feugiat tortor pretium sit amet. Mauris pretium nisl nec lectus sodales, nec aliquet ligula iaculis. Ut euismod nulla libero, vel ullamcorper velit faucibus in. Fusce scelerisque congue odio, ullamcorper mollis felis pharetra eu. Ut aliquam massa eget lectus elementum, eget mollis urna pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a porttitor augue. Nunc et nulla fringilla, eleifend lacus in, egestas leo. Suspendisse potenti. Morbi ut erat eu libero lacinia pretium. In tincidunt massa eget erat porttitor pellentesque. Integer libero lacus, venenatis nec nisl et, luctus molestie diam. Quisque accumsan ligula id enim eleifend, sed blandit velit pretium. Sed pretium, mi non congue ullamcorper, nisi mi scelerisque nisl, sit amet malesuada neque erat non mi.
-    </p>
+    <p>I am a full stack web developer based in Bangkok, Thailand. I started in the modern web development since studying in college when I watch videos and read about full stack javascript development and made some projects after that.
+        Over a couple years I have doing my side projects and then worked with latest technology with a company that I have gained a lot of knowledge and experience with JavaScript and its ecosystem - things like TypeScript, React, Node and many more.
+        I have a huge passion for front and backend web development which I expanding my knowledge every day and staying up to date</p>
     </section>
 </div>
 
