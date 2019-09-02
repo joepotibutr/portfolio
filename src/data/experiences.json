@@ -1,10 +1,10 @@
 [{
     "title": "Software Developer",
     "company": "ScreenCloud",
-    "description": "Helping build the signage screen CMS platform and content playing site. Technologies used: React with TypeScript, ES6/ES7 including concepts like asynchronous programming (async/await), made some reusable component with CSS in JS, debugging and refactoring existing code"
+    "description": "Helping build the digital signage browser integrations and CMS platform. Technologies used: React with TypeScript, ES6/ES7 including concepts like asynchronous programming (async/await), made some reusable component with CSS in JS, debugging and refactoring existing code"
 },{
     "title": "Web Developer Intern",
     "company": "SHOPSEASON",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum gravida mi id consequat. Nunc sodales auctor libero, tincidunt feugiat tortor pretium sit amet. Mauris pretium nisl nec lectus sodales, nec aliquet ligula iaculis. Ut euismod nulla libero, vel ullamcorper velit faucibus in. Fusce scelerisque congue odio, ullamcorper mollis felis pharetra eu. Ut aliquam massa eget lectus elementum, eget mollis urna pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a porttitor augue. Nunc et nulla fringilla, eleifend lacus in, egestas leo. Suspendisse potenti. Morbi ut erat eu libero lacinia pretium. In tincidunt massa eget erat porttitor pellentesque. Integer libero lacus, venenatis nec nisl et, luctus molestie diam. Quisque accumsan ligula id enim eleifend, sed blandit velit pretium. Sed pretium, mi non congue ullamcorper, nisi mi scelerisque nisl, sit amet malesuada neque erat non mi.",
+    "description": "Designed and implemented customer validation forms Technologies used: AngularJS, CSS and Golang",
     "date": "June 2017 - July 2017"
 }]
