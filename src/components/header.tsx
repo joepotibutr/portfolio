@@ -14,15 +14,17 @@ const Header = ({ siteTitle }: any) => (
       background: 'white',
       height: '80px',
       padding: '20px',
-      margin: `0 auto`,
       display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
       width: '100%'
     }}
   >
     <div style={{
           maxWidth: 720,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: '100%'
     }}>
     <div
     
@@ -37,13 +39,13 @@ const Header = ({ siteTitle }: any) => (
       </h1>
     </div>
     <NavigationContext.Consumer>
-    {(gotoNavigation: any) => (
+    {(goto) => (
     <nav style={{ 
       display: 'flex',
       fontSize: '1em'
        }}>
          {Object.values(NAVIGATION).map(section => (
-          <div onClick={() => gotoNavigation(section)}>
+          <div onClick={() => goto(section)}>
             <h1 style={{ 
               fontSize: '1em',
               margin: 0,

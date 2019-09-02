@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {NavigationContext} from './index'
+import { NAVIGATION } from '../constants';
 
 interface Props {
     
@@ -41,15 +43,20 @@ export default class About extends Component<Props, State> {
             }}>View Resume</button>
             </div>
             <div>
-            <button style={{
-                borderRadius: '4px',
-                      fontWeight:'bold',
-                      fontSize: '14px',
-                    height: '50px',
-                    background: 'black',
-                    color: 'white',
-                    width: '150px',
-            }}>Get in touch</button>
+                <NavigationContext.Consumer>
+                {(goto) => (
+                    <button onClick={() => goto(NAVIGATION.CONTACT)} style={{
+                        borderRadius: '4px',
+                              fontWeight:'bold',
+                              fontSize: '14px',
+                            height: '50px',
+                            background: 'black',
+                            color: 'white',
+                            width: '150px',
+                    }}>Get in touch</button>
+                )}
+                </NavigationContext.Consumer>
+           
             </div>
         </div>
      
