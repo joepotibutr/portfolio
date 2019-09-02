@@ -1,6 +1,5 @@
 export enum NAVIGATION {
     ABOUT = 'ABOUT',
-    SKILLS = 'SKILLS',
     EXPERIENCE = 'EXPERIENCE',
     PROJECTS = 'PROJECTS'
 }

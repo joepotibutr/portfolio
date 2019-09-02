@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import About from './about'
-import Skills from './skills'
 import Experience from './experience'
 import { NAVIGATION } from "../constants";
 import Projects from "./projects";
@@ -13,7 +12,6 @@ import Projects from "./projects";
 const aboutRef: React.RefObject<HTMLDivElement> = React.createRef()
 const expRef: React.RefObject<HTMLDivElement> = React.createRef()
 const projectsRef: React.RefObject<HTMLDivElement> = React.createRef()
-const skillsRef : React.RefObject<HTMLDivElement>= React.createRef()
 
 const gotoNavigation = (destination: NAVIGATION) => {
   let destinationRef: React.RefObject<HTMLDivElement> | undefined
@@ -21,9 +19,6 @@ const gotoNavigation = (destination: NAVIGATION) => {
   switch(destination) {
     case NAVIGATION.ABOUT :
       destinationRef = aboutRef
-      break
-    case NAVIGATION.SKILLS :
-      destinationRef = skillsRef
       break
     case NAVIGATION.EXPERIENCE : 
       destinationRef = expRef
@@ -56,9 +51,6 @@ const IndexPage = () => {
         </div>
         <div ref={projectsRef}>
         <Projects  />
-        </div>
-        <div ref={skillsRef} > 
-        <Skills />
         </div>
       </Layout>
     </NavigationContext.Provider>

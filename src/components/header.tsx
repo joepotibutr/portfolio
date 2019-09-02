@@ -15,12 +15,17 @@ const Header = ({ siteTitle }: any) => (
       height: '80px',
       padding: '20px',
       margin: `0 auto`,
-      maxWidth: 720,
       display: 'flex',
-      justifyContent: 'space-between'
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      width: '100%'
     }}
   >
+    <div style={{
+          maxWidth: 720,
+    }}>
     <div
+    
     >
       <h1 style={{ 
         fontSize: '1em',
@@ -52,6 +57,8 @@ const Header = ({ siteTitle }: any) => (
          ))}
     </nav>)}
     </NavigationContext.Consumer>
+    </div>
+   
   </header>
 )
 
