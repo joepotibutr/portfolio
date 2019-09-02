@@ -14,7 +14,7 @@ export default class Projects extends Component<Props, State> {
 
     render() {
         return (
-            <section>
+            <section style={{ height: '100vh', marginTop: '100px' }}>
                 {projects.map((project: any) => (
                     <div>
                         {project.name}

@@ -34,7 +34,7 @@ const gotoNavigation = (destination: NAVIGATION) => {
   }
   
   return destinationRef && destinationRef.current && window.scrollTo({
-    top: destinationRef.current!.offsetTop,
+    top: destinationRef.current!.offsetTop - 100,
     behavior: 'smooth'
   })
 }

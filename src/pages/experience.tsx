@@ -14,7 +14,7 @@ export default class Experience extends Component<Props, State> {
 
     render() {
         return (
-            <section>
+            <section style={{ height: '100vh', marginTop: '100px' }}>
             <h2>Experiences</h2>
              {experiences.map((exp: any) => <div>
                <title>{exp.title}</title>

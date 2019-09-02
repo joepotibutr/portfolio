@@ -15,7 +15,7 @@ export default class Skills extends Component<Props, State> {
     render() {
         return (
            
-    <section>
+    <section style={{ height: '100vh', marginTop: '100px' }}>
     <h2>Skills</h2>
     <ul>{skills.map((skill: any) => <li>{skill}</li> )}</ul>
   </section>
