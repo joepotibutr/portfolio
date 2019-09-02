@@ -8,41 +8,48 @@ import {NavigationContext} from '../pages/index'
 
 const Header = ({ siteTitle }: any) => (
   <header
-    style={{ display: 'flex' }}
+    style={{ 
+      top: 0,
+      position: 'fixed',
+      background: 'white',
+      height: '80px',
+      padding: '20px',
+      margin: `0 auto`,
+      maxWidth: 720,
+      display: 'flex',
+      justifyContent: 'space-between'
+    }}
   >
     <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
     >
-      <h1 style={{ margin: 0,
-            textDecoration: `none`, }}>
+      <h1 style={{ 
+        fontSize: '1em',
+        margin: 0,
+        textDecoration: `none`, }}>
 
-          {siteTitle}
+        <span>{siteTitle} -</span>
+        <span style={{ fontWeight: 'lighter' }}> Full Stack Engineer</span>
       </h1>
-
-      <h1>Full Stack Developer</h1>
-      
     </div>
     <NavigationContext.Consumer>
-    {(gotoNavigation: any) => (<nav style={{ display: 'flex'}}>
-      <div onClick={() => gotoNavigation(NAVIGATION.ABOUT)}>
-        <h3>About</h3>
-      </div>
-
-      <div onClick={() => gotoNavigation(NAVIGATION.EXPERIENCE)}>
-        <h3>Experience</h3>
-      </div>
-
-      <div onClick={() => gotoNavigation(NAVIGATION.PROJECTS)}>
-        <h3>Projects</h3>
-      </div>
-
-      <div onClick={() => gotoNavigation(NAVIGATION.SKILLS)}>
-        <h3>Skills</h3>
-      </div>
+    {(gotoNavigation: any) => (
+    <nav style={{ 
+      display: 'flex',
+      fontSize: '1em'
+       }}>
+         {Object.values(NAVIGATION).map(section => (
+          <div onClick={() => gotoNavigation(section)}>
+            <h1 style={{ 
+              fontSize: '1em',
+              margin: 0,
+              textDecoration: `none`,
+              marginRight: '10px'
+            }}
+              >
+              {section.charAt(0) + section.slice(1).toLowerCase()}
+            </h1>
+          </div>
+         ))}
     </nav>)}
     </NavigationContext.Consumer>
   </header>
