@@ -7,11 +7,13 @@ import About from './about'
 import Experience from './experience'
 import { NAVIGATION } from "../constants";
 import Projects from "./projects";
+import Contact from "./contact";
 
 
 const aboutRef: React.RefObject<HTMLDivElement> = React.createRef()
 const expRef: React.RefObject<HTMLDivElement> = React.createRef()
 const projectsRef: React.RefObject<HTMLDivElement> = React.createRef()
+const contactRef: React.RefObject<HTMLDivElement> = React.createRef()
 
 const gotoNavigation = (destination: NAVIGATION) => {
   let destinationRef: React.RefObject<HTMLDivElement> | undefined
@@ -26,6 +28,8 @@ const gotoNavigation = (destination: NAVIGATION) => {
     case NAVIGATION.PROJECTS : 
       destinationRef = projectsRef
       break
+    case NAVIGATION.CONTACT : 
+      destinationRef = contactRef
   }
   
   return destinationRef && destinationRef.current && window.scrollTo({
@@ -50,7 +54,10 @@ const IndexPage = () => {
           <Experience  />
         </div>
         <div ref={projectsRef}>
-        <Projects  />
+          <Projects  />
+        </div>
+        <div ref={contactRef}>
+          <Contact  />
         </div>
       </Layout>
     </NavigationContext.Provider>
