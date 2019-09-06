@@ -1,8 +1,19 @@
 [{
-    "name": "Shopping",
+    "name": "Ecommerce Clone",
     "github": "https://github.com",
-    "link": "https://www.herokuapp.com/",
-    "tech": "react, node",
-    "description": "A shopping online store",
-    "date": "2017"
-}]
+    "thumbnail": "",
+    "link": "#",
+    "techstack": ["react","redux","node","mongodb"],
+    "description": "Ecommerce Clone, Shopping cart and member system for customer and CMS platform for owner to manage stock",
+    "year": "2017"
+},
+{
+    "name": "Spotify Clone",
+    "github": "https://github.com",
+    "thumbnail": "",
+    "link": "#",
+    "techstack": ["react","redux-saga","spotify-api"],
+    "description": "Spotify Clone, Using this app like a real spotify with Spotify API",
+    "year": "2018"
+}
+]
