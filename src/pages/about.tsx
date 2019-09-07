@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {NavigationContext} from './index'
 import { NAVIGATION } from '../constants';
+import { Button, Section } from '../components'
 
 interface Props {
     
@@ -16,12 +17,7 @@ export default class About extends Component<Props, State> {
         return (
            
 <div>
-<section style={{ 
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-    height: '60vh', marginTop: '100px' }}>
+<Section height={60}>
         <div style={{ marginBottom: '20px' }}>
         <h1>Hi people</h1>
     <p>I am a full stack web developer based in Bangkok, Thailand. I started in the modern web development since studying in college when I watch videos and read about full stack javascript development and made some projects after that.
@@ -32,37 +28,18 @@ export default class About extends Component<Props, State> {
             <div style={{
                 marginRight: '20px'
             }}>
-                <button style={{
-                    cursor:'pointer',
-                    borderRadius: '4px',
-                    fontWeight:'bold',
-                    fontSize: '14px',
-                    height: '50px',
-                    background: 'black',
-                    color: 'white',
-                    width: '150px',
-            }}>View Resume</button>
+                <Button>View Resume</Button>
             </div>
             <div>
                 <NavigationContext.Consumer>
                 {(goto) => (
-                    <button onClick={() => goto(NAVIGATION.CONTACT)} style={{
-                        cursor:'pointer',
-                        borderRadius: '4px',
-                              fontWeight:'bold',
-                              fontSize: '14px',
-                            height: '50px',
-                            background: 'black',
-                            color: 'white',
-                            width: '150px',
-                    }}>Get in touch</button>
+                    <Button onClick={() => goto(NAVIGATION.CONTACT)}>Get in touch</Button>
                 )}
                 </NavigationContext.Consumer>
            
             </div>
         </div>
-     
-    </section>
+    </Section>
 </div>
 
         )
