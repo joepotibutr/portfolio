@@ -15,11 +15,21 @@ export default class Projects extends Component<Props, State> {
     render() {
         return (
             <section style={{ height: '100vh', marginTop: '100px' }}>
+                <ul style={{
+                    display:'grid',
+                    gridTemplateColumns: '1fr 1fr'
+
+                }}>
                 {projects.map((project: any) => (
-                    <div>
-                        {project.name}
-                    </div>
+                    <li>
+                       <h2>{project.name}</h2> <span>{project.year}</span>
+                       <p>{project.description}</p>
+                       {project.techstack.map((tech: string) => (
+                           <span>{tech}</span>
+                       ))}
+                    </li>
                 ))}
+                </ul>
             </section>
         )
     }

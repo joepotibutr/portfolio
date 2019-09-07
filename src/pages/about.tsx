@@ -33,6 +33,7 @@ export default class About extends Component<Props, State> {
                 marginRight: '20px'
             }}>
                 <button style={{
+                    cursor:'pointer',
                     borderRadius: '4px',
                     fontWeight:'bold',
                     fontSize: '14px',
@@ -46,6 +47,7 @@ export default class About extends Component<Props, State> {
                 <NavigationContext.Consumer>
                 {(goto) => (
                     <button onClick={() => goto(NAVIGATION.CONTACT)} style={{
+                        cursor:'pointer',
                         borderRadius: '4px',
                               fontWeight:'bold',
                               fontSize: '14px',
