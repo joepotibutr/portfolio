@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {NavigationContext} from './index'
 import { NAVIGATION } from '../constants';
-import { Button, Section } from '../components'
+import { Button, Section } from '../components/'
 
 interface Props {
     
