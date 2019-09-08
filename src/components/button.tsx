@@ -12,9 +12,9 @@ const ButtonStyled = styled.button`
     width: 150px;
 `
 
-const Button = ({ children, onClick }: { children: React.ReactChild, onClick?: () => void }) => {
+const Button = ({ children, onClick, type }: { children: React.ReactChild, onClick?: () => void, type?: 'submit' }) => {
     return (
-        <ButtonStyled onClick={onClick}>
+        <ButtonStyled type={type} onClick={onClick}>
             {children}
         </ButtonStyled>
     )
