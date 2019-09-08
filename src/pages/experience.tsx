@@ -15,16 +15,17 @@ export default class Experience extends Component<Props, State> {
 
     render() {
         return (
-            <Section height={40}>
-            <h2>Experiences</h2>
-             {experiences.map((exp: any) => <div>
-               <title>{exp.title}</title>
-               <head>{exp.date}</head>
-               <b>{exp.company}</b>
-               <p>{exp.description}</p>
-             </div>)}
-            
-           </Section>
+          <Section height={40}>
+            <div>
+              <h2>Experiences</h2>
+              {experiences.map((exp: any) => <div>
+                <title>{exp.title}</title>
+                <head>{exp.date}</head>
+                <b>{exp.company}</b>
+                <p>{exp.description}</p>
+              </div>)}
+            </div>  
+          </Section>
         )
     }
 }

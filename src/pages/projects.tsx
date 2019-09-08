@@ -31,19 +31,21 @@ export default class Projects extends Component<Props, State> {
 
     render() {
         return (
-            <Section height={40}>
-                <h2>Projects</h2>
-                <ProjectsList>
-                {projects.map((project: any) => (
-                    <ProjectItemBox>
-                       <h2>{project.name}</h2> <span>{project.year}</span>
-                       <p>{project.description}</p>
-                       {project.techstack.map((tech: string) => (
-                           <span>{tech}</span>
-                       ))}
-                    </ProjectItemBox>
-                ))}
-                </ProjectsList>
+            <Section height={70}>
+                <div>
+                    <h2>Projects</h2>
+                    <ProjectsList>
+                    {projects.map((project: any) => (
+                        <ProjectItemBox>
+                        <h2>{project.name}</h2> <span>{project.year}</span>
+                        <p>{project.description}</p>
+                        {project.techstack.map((tech: string) => (
+                            <span>{tech}</span>
+                        ))}
+                        </ProjectItemBox>
+                    ))}
+                    </ProjectsList>
+                </div>
             </Section>
         )
     }
