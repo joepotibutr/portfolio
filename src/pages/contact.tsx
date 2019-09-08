@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Section } from '../components'
 
 interface Props {
     
@@ -12,7 +13,7 @@ export default class Contact extends Component<Props, State> {
 
     render() {
         return (
-            <section style={{ height: '70vh', marginTop: '100px' }}>
+            <Section height={70}>
                 <h2>Contact</h2>
                 <form action="">
                     <input placeholder="Full name*" style={{ display: 'block' }} type="text"/>
@@ -29,7 +30,7 @@ export default class Contact extends Component<Props, State> {
                             width: '150px',
                     }} type="submit">Submit</button>
                 </form>
-            </section>
+            </Section>
         )
     }
 }

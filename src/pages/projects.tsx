@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Section } from '../components'
 
 const projects = require('../data/projects.json')
 
@@ -30,7 +31,7 @@ export default class Projects extends Component<Props, State> {
 
     render() {
         return (
-            <section style={{ height: '100vh', marginTop: '100px' }}>
+            <Section height={40}>
                 <h2>Projects</h2>
                 <ProjectsList>
                 {projects.map((project: any) => (
@@ -43,7 +44,7 @@ export default class Projects extends Component<Props, State> {
                     </ProjectItemBox>
                 ))}
                 </ProjectsList>
-            </section>
+            </Section>
         )
     }
 }

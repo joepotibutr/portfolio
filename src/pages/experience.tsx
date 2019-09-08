@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Section } from '../components'
 const experiences = require('../data/experiences.json')
 
 
@@ -14,7 +15,7 @@ export default class Experience extends Component<Props, State> {
 
     render() {
         return (
-            <section style={{ height: '40vh', marginTop: '100px' }}>
+            <Section height={40}>
             <h2>Experiences</h2>
              {experiences.map((exp: any) => <div>
                <title>{exp.title}</title>
@@ -23,7 +24,7 @@ export default class Experience extends Component<Props, State> {
                <p>{exp.description}</p>
              </div>)}
             
-           </section>
+           </Section>
         )
     }
 }
