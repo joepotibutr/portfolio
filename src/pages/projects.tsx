@@ -16,6 +16,7 @@ const ProjectsList = styled.ul`
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     margin:0;
+
 `
 
 const ProjectItemBox = styled.li`
@@ -24,6 +25,29 @@ const ProjectItemBox = styled.li`
     padding: 20px;
     border-radius: 4px;
     cursor: pointer;
+    position: relative;
+
+    &:after {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        content: '';
+        transition: opacity .3s;
+        opacity: 0;
+        box-shadow:black 1px 1px 12px 0px;
+        border-radius: 4px;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+    }
+
+
 `
 
 export default class Projects extends Component<Props, State> {
