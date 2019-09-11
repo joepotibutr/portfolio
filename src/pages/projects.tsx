@@ -21,11 +21,13 @@ const ProjectsList = styled.ul`
 `
 
 const Tag = styled.span`
-    background: lightgray;
+    background: darkgray;
     border-radius: 3px;
     font-size: 12px;
+    font-weight: bold;
     padding: 5px;
     margin-right: 10px;
+    color:white;
 `
 
 const ProjectItemBox = styled.li`
