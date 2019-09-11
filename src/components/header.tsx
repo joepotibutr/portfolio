@@ -46,7 +46,7 @@ const Header = ({ siteTitle }: any) => (
         fontSize: '1em'
         }}>
           {Object.values(NAVIGATION).map(currentSection => (
-            <div onClick={() => goto(currentSection)}>
+            <div style={{ cursor: 'pointer' }} onClick={() => goto(currentSection)}>
               <h1 style={{ 
                 fontSize: '1em',
                 margin: 0,
