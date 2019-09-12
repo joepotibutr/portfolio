@@ -15,6 +15,7 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: center;
   width: 100%;
+  z-index: 99;
 `
 
 const HeaderOuterWrapper = styled.div`
@@ -46,7 +47,7 @@ const Header = ({ siteTitle }: any) => (
         fontSize: '1em'
         }}>
           {Object.values(NAVIGATION).map(currentSection => (
-            <div style={{ cursor: 'pointer' }} onClick={() => goto(currentSection)}>
+            <div key={currentSection} style={{ cursor: 'pointer' }} onClick={() => goto(currentSection)}>
               <h1 style={{ 
                 fontSize: '1em',
                 margin: 0,
