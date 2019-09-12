@@ -1,15 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Section } from '../components'
 
 const projects = require('../data/projects.json')
 
-interface Props {
-    
-}
-interface State {
-    
-}
 
 const ProjectsList = styled.ul`
     display:grid;
@@ -30,7 +24,7 @@ const Tag = styled.span`
     color:white;
 `
 
-const ProjectItemBox = styled.li`
+const ProjectItemBox = styled.li<{ active: boolean }>`
     list-style: none;
     padding: 20px;
     border-radius: 4px;
@@ -40,6 +34,10 @@ const ProjectItemBox = styled.li`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    .detail {
+        display: ${props => props.active ? 'block' : 'none'};
+    }
 
     &:after {
         width: 100%;
@@ -64,17 +62,15 @@ const ProjectItemBox = styled.li`
 
 `
 
-export default class Projects extends Component<Props, State> {
-    state = {}
-
-    render() {
+export default () => {
+        const [currentIdx,setOpen] = React.useState(-1)
         return (
             <Section height={70}>
                 <div>
                     <h2>Projects</h2>
                     <ProjectsList>
-                    {projects.map((project: any) => (
-                        <ProjectItemBox>
+                    {projects.map((project: any, index: number) => (
+                        <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
                             <div>
                                 <h4 style={{
                                 display: 'flex',
@@ -82,9 +78,12 @@ export default class Projects extends Component<Props, State> {
                             }}>{project.name}<span>{project.year}</span></h4> 
                             <p>{project.description}</p>
                             </div>
+                            <div className="detail">
+                                test
+                            </div>
                             <div>
                             {project.techstack.map((tech: string) => (
-                            <Tag>#{tech}</Tag>
+                            <Tag key={tech}>{`#${tech}`}</Tag>
                         ))}
                             </div>
                        
@@ -94,5 +93,4 @@ export default class Projects extends Component<Props, State> {
                 </div>
             </Section>
         )
-    }
 }
