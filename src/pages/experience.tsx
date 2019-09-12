@@ -18,12 +18,13 @@ export default class Experience extends Component<Props, State> {
           <Section height={40}>
             <div>
               <h2>Experiences</h2>
-              {experiences.map((exp: any) => <div>
+              {experiences.map((exp: any) => (
+              <div key={exp.title}>
                 <title>{exp.title}</title>
-                <head>{exp.date}</head>
+                <h4>{exp.date}</h4>
                 <b>{exp.company}</b>
                 <p>{exp.description}</p>
-              </div>)}
+              </div>))}
             </div>  
           </Section>
         )
