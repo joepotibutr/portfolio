@@ -1,14 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Section } from '../components'
+import OutsideClickHandler from 'react-outside-click-handler';
+import { Button } from '../components'
+
 
 const projects = require('../data/projects.json')
 
 
 const ProjectsList = styled.ul`
-    display:grid;
+    display:flex;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 250px;
+    grid-template-rows: 325px;
     grid-gap: 10px;
     margin:0;
 
@@ -33,10 +36,13 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
     box-shadow: gray 1px 1px 3px 0px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
 
     .detail {
-        display: ${props => props.active ? 'block' : 'none'};
+        display: flex;
+        overflow:hidden;
+        transition: .3s;
+        height: ${props => props.active ? '100%' : '0'};
     }
 
     &:after {
@@ -64,6 +70,7 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
 
 export default () => {
         const [currentIdx,setOpen] = React.useState(-1)
+
         return (
             <Section height={70}>
                 <div>
@@ -71,22 +78,29 @@ export default () => {
                     <ProjectsList>
                     {projects.map((project: any, index: number) => (
                         <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
-                            <div>
+                            <div style={{
+                                height: '150px',
+                                marginBottom: '20px'
+                            }}>
                                 <h4 style={{
                                 display: 'flex',
                                 justifyContent: 'space-between'
                             }}>{project.name}<span>{project.year}</span></h4> 
                             <p>{project.description}</p>
                             </div>
-                            <div className="detail">
-                                test
-                            </div>
-                            <div>
+
+                            <div style={{ marginBottom: '20px' }}>
                             {project.techstack.map((tech: string) => (
-                            <Tag key={tech}>{`#${tech}`}</Tag>
-                        ))}
+                                <Tag key={tech}>{`#${tech}`}</Tag>
+                            ))}
+                                    
                             </div>
-                       
+                            <OutsideClickHandler onOutsideClick={() => setOpen(-1)} >
+                                <div className="detail">
+                                    <Button onClick={() => window.open(project.url)}>Source</Button>
+                                    <Button>Example</Button>
+                                </div>
+                            </OutsideClickHandler>
                         </ProjectItemBox>
                     ))}
                     </ProjectsList>
