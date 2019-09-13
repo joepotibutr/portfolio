@@ -9,9 +9,9 @@ const projects = require('../data/projects.json')
 
 
 const ProjectsList = styled.ul`
-    display:flex;
+    display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 325px;
+    grid-template-rows: 255px;
     grid-gap: 10px;
     margin:0;
 
@@ -37,12 +37,28 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
     display: flex;
     flex-direction: column;
     justify-content: start;
+    
+    .project-title {
+        transition: .1s ease-in;
+        filter: blur(${props => props.active ? 5 : 0}px);
+    }
+
+    .techstack {
+        transition: .1s ease-in;
+        filter: blur(${props => props.active ? 5 : 0}px);
+    }
 
     .detail {
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        margin: -20px;
         display: flex;
         overflow:hidden;
-        transition: .3s;
-        height: ${props => props.active ? '100%' : '0'};
+        transition: .5s;
+        opacity: ${props => props.active ? '1' : '0'};
     }
 
     &:after {
@@ -75,10 +91,13 @@ export default () => {
             <Section height={70}>
                 <div>
                     <h2>Projects</h2>
+                    <OutsideClickHandler onOutsideClick={() => setOpen(-1)} >
                     <ProjectsList>
                     {projects.map((project: any, index: number) => (
                         <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
-                            <div style={{
+                            <div
+                                className="project-title"
+                                style={{
                                 height: '150px',
                                 marginBottom: '20px'
                             }}>
@@ -89,21 +108,20 @@ export default () => {
                             <p>{project.description}</p>
                             </div>
 
-                            <div style={{ marginBottom: '20px' }}>
+                            <div className="techstack" style={{ marginBottom: '20px' }}>
                             {project.techstack.map((tech: string) => (
                                 <Tag key={tech}>{`#${tech}`}</Tag>
                             ))}
                                     
                             </div>
-                            <OutsideClickHandler onOutsideClick={() => setOpen(-1)} >
-                                <div className="detail">
-                                    <Button onClick={() => window.open(project.url)}>Source</Button>
-                                    <Button>Example</Button>
-                                </div>
-                            </OutsideClickHandler>
+                            <div className="detail">
+                                <Button onClick={() => window.open(project.url)}>Source</Button>
+                                <Button>Example</Button>
+                            </div>
                         </ProjectItemBox>
                     ))}
                     </ProjectsList>
+                    </OutsideClickHandler>
                 </div>
             </Section>
         )

@@ -12,7 +12,7 @@ interface SectionStyleProps {
 
 const SectionStyled = styled.section<SectionStyleProps>`
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;        
     flex-direction: column;
     height: ${(props) => props.height}vh; 
