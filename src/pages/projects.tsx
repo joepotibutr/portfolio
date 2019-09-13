@@ -39,13 +39,15 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
     justify-content: start;
     
     .project-title {
-        transition: .1s ease-in;
+        transition: .3s ease-in;
         filter: blur(${props => props.active ? 5 : 0}px);
+        opacity: ${props => props.active ? '.5' : '1'};
     }
 
     .techstack {
-        transition: .1s ease-in;
+        transition: .3s ease-in;
         filter: blur(${props => props.active ? 5 : 0}px);
+        opacity: ${props => props.active ? '.5' : '1'};
     }
 
     .detail {
@@ -58,6 +60,7 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
         display: flex;
         overflow:hidden;
         transition: .5s;
+        visibility: ${props => props.active ? 'visible' : 'hidden'};
         opacity: ${props => props.active ? '1' : '0'};
     }
 
