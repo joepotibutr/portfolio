@@ -36,7 +36,7 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
     box-shadow: gray 1px 1px 3px 0px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
     
     .project-title {
         transition: .3s ease-in;
@@ -51,6 +51,7 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
     }
 
     .detail {
+        cursor: default;
         height: 100%;
         justify-content: center;
         align-items: center;
@@ -111,7 +112,7 @@ export default () => {
                             <p>{project.description}</p>
                             </div>
 
-                            <div className="techstack" style={{ marginBottom: '20px' }}>
+                            <div className="techstack">
                             {project.techstack.map((tech: string) => (
                                 <Tag key={tech}>{`#${tech}`}</Tag>
                             ))}
