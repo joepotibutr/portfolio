@@ -16,7 +16,6 @@ export default class About extends Component<Props, State> {
     render() {
         return (
            
-<div>
 <Section height={60}>
         <div style={{ marginBottom: '20px' }}>
         <h1>Hi people</h1>
@@ -40,7 +39,6 @@ export default class About extends Component<Props, State> {
             </div>
         </div>
     </Section>
-</div>
 
         )
     }
