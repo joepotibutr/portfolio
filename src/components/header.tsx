@@ -26,12 +26,24 @@ const HeaderOuterWrapper = styled.div`
   width: 100%;
 `
 
+const NavigationLink = styled.h1`
+  font-size: 1em;
+  margin: 0;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: .3s;
+  &:hover {
+    font-size: 1.1em;
+    color: gray;
+  }
+`
+
 
 const Header = ({ siteTitle }: any) => (
   <HeaderStyled>
     <HeaderOuterWrapper>
       <div>
-        <h1 style={{ 
+      <h1 style={{ 
           fontSize: '1em',
           margin: 0,
           textDecoration: `none`, }}>
@@ -48,15 +60,9 @@ const Header = ({ siteTitle }: any) => (
         }}>
           {Object.values(NAVIGATION).map(currentSection => (
             <div key={currentSection} style={{ cursor: 'pointer' }} onClick={() => goto(currentSection)}>
-              <h1 style={{ 
-                fontSize: '1em',
-                margin: 0,
-                textDecoration: `none`,
-                marginRight: '10px'
-              }}
-                >
+              <NavigationLink>
                 {currentSection.charAt(0) + currentSection.slice(1).toLowerCase()}
-              </h1>
+              </NavigationLink>
             </div>
           ))}
       </nav>)}
