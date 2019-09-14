@@ -120,7 +120,7 @@ export default () => {
                             </div>
                             <div className="detail">
                                 <Button onClick={() => window.open(project.url)}>Source</Button>
-                                <Button>Example</Button>
+                                <Button>View</Button>
                             </div>
                         </ProjectItemBox>
                     ))}

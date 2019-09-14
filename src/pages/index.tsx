@@ -30,6 +30,7 @@ const gotoNavigation = (destination: NAVIGATION) => {
       break
     case NAVIGATION.CONTACT : 
       destinationRef = contactRef
+      break
   }
   
   return destinationRef && destinationRef.current && window.scrollTo({
