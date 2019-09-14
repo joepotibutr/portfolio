@@ -10,6 +10,17 @@ const ButtonStyled = styled.button`
     background: black;
     color: white;
     width: 150px;
+    transition: .3s;
+    
+    &:focus {
+        outline: 0;
+    }
+
+    &:hover {
+        background:white;
+        color:black;
+        border: 1px solid black;
+    }
 `
 
 const Button = ({ children, onClick, type }: { children: React.ReactChild, onClick?: () => void, type?: 'submit' }) => {
