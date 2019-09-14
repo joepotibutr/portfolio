@@ -1,19 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Section } from '../components'
 const experiences = require('../data/experiences.json')
 
-
-interface Props {
-    
-}
-interface State {
-    
-}
-
-export default class Experience extends Component<Props, State> {
-    state = {}
-
-    render() {
+export default () => {
         return (
           <Section height={40}>
             <div>
@@ -28,5 +17,4 @@ export default class Experience extends Component<Props, State> {
             </div>  
           </Section>
         )
-    }
 }
