@@ -2,13 +2,12 @@ import PropTypes from "prop-types"
 import React from "react"
 
 import { NAVIGATION } from "../constants";
-
+import { SlideUp } from '../components'
 import {NavigationContext} from '../pages/index'
 import styled from 'styled-components'
 
 const HeaderStyled = styled.header`
   top: 0;
-  position: fixed;
   background: white;
   height: 80px;
   padding: 20px;
@@ -16,6 +15,9 @@ const HeaderStyled = styled.header`
   justify-content: center;
   width: 100%;
   z-index: 99;
+  padding: 0px 20px 20px;
+  margin: 0px auto;
+  max-width: 720px;
 `
 
 const HeaderOuterWrapper = styled.div`
@@ -40,35 +42,38 @@ const NavigationLink = styled.h1`
 
 
 const Header = ({ siteTitle }: any) => (
-  <HeaderStyled>
-    <HeaderOuterWrapper>
-      <div>
-      <h1 style={{ 
-          fontSize: '1em',
-          margin: 0,
-          textDecoration: `none`, }}>
+  <SlideUp>
+    <HeaderStyled>
+      <HeaderOuterWrapper>
+        <div>
+        <h1 style={{ 
+            fontSize: '1em',
+            margin: 0,
+            textDecoration: `none`, }}>
 
-          <span>{siteTitle} -</span>
-          <span style={{ fontWeight: 'lighter' }}> Full Stack Engineer</span>
-        </h1>
-      </div>
-      <NavigationContext.Consumer>
-      {(goto) => (
-      <nav style={{ 
-        display: 'flex',
-        fontSize: '1em'
-        }}>
-          {Object.values(NAVIGATION).map(currentSection => (
-            <div key={currentSection} style={{ cursor: 'pointer' }} onClick={() => goto(currentSection)}>
-              <NavigationLink>
-                {currentSection.charAt(0) + currentSection.slice(1).toLowerCase()}
-              </NavigationLink>
-            </div>
-          ))}
-      </nav>)}
-      </NavigationContext.Consumer>
-    </HeaderOuterWrapper>
-  </HeaderStyled>
+            <span>{siteTitle} -</span>
+            <span style={{ fontWeight: 'lighter' }}> Full Stack Engineer</span>
+          </h1>
+        </div>
+        <NavigationContext.Consumer>
+        {(goto) => (
+        <nav style={{ 
+          display: 'flex',
+          fontSize: '1em'
+          }}>
+            {Object.values(NAVIGATION).map(currentSection => (
+              <div key={currentSection} style={{ cursor: 'pointer' }} onClick={() => goto(currentSection)}>
+                <NavigationLink>
+                  {currentSection.charAt(0) + currentSection.slice(1).toLowerCase()}
+                </NavigationLink>
+              </div>
+            ))}
+        </nav>)}
+        </NavigationContext.Consumer>
+      </HeaderOuterWrapper>
+    </HeaderStyled>
+  </SlideUp>
+ 
 )
 
 Header.propTypes = {
