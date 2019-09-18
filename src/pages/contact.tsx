@@ -1,13 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Section, Button } from '../components'
 import styled from 'styled-components'
-
-interface Props {
-    
-}
-interface State {
-    
-}
 
 const FormInput = styled.div`
     margin-bottom:  10px;
@@ -25,29 +18,25 @@ const TextInput = styled.input`
     }
 `
 
-export default class Contact extends Component<Props, State> {
-    state = {}
-
-    render() {
-        return (
-            <Section height={70}>
-                <div style={{ width : '100%', height: '100%'}}>
-                <h2>Contact</h2>
-                <form onSubmit={(e) => {e.preventDefault() 
-                    }} action="">
-                    <FormInput>
-                        <TextInput required placeholder="Full name*" type="text"/>
-                    </FormInput>
-                    <FormInput>
-                        <TextInput required placeholder="Email*" type="email"/>
-                    </FormInput>
-                    <FormInput>
-                        <textarea required style={{ padding: '5px' ,display: 'block', width: '100%',borderRadius: '4px' }} placeholder="Message*" name="" id="" cols={30} rows={10}></textarea>
-                    </FormInput>
-                    <Button type="submit">Submit</Button>
-                </form>
-                </div>
-            </Section>
-        )
-    }
+export default () => {
+    return (
+        <Section height={70}>
+            <div style={{ width : '100%', height: '100%'}}>
+            <h2>Contact</h2>
+            <form onSubmit={(e) => {e.preventDefault() 
+                }} action="">
+                <FormInput>
+                    <TextInput required placeholder="Full name*" type="text"/>
+                </FormInput>
+                <FormInput>
+                    <TextInput required placeholder="Email*" type="email"/>
+                </FormInput>
+                <FormInput>
+                    <textarea required style={{ padding: '5px' ,display: 'block', width: '100%',borderRadius: '4px' }} placeholder="Message*" name="" id="" cols={30} rows={10}></textarea>
+                </FormInput>
+                <Button type="submit">Submit</Button>
+            </form>
+            </div>
+        </Section>
+    )
 }
