@@ -22,6 +22,7 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-outside-click-handler": "^1.2.4",
+    "react-resize-detector": "git+https://github.com/maslianok/react-resize-detector.git",
     "styled-components": "^4.3.2",
     "tslint": "^5.19.0",
     "tslint-config-prettier": "^1.18.0",
