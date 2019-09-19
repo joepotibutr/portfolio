@@ -15,28 +15,28 @@ interface Props {
 }
 
 export default function SlideUpHeader({ children }: Props) {
-    const [newScrollPos,updateNewScroll] = React.useState(0) 
-    const [lastScrollPos, updateLastScroll] = React.useState(0)
+    // const [newScrollPos,updateNewScroll] = React.useState(0) 
+    // const [lastScrollPos, updateLastScroll] = React.useState(0)
     const [slideUp, slide] = React.useState(false)
 
     const slideRef = React.useRef(null)
 
-    const onScroll = () => {
+    // const onScroll = () => {
 
-    updateLastScroll(window.scrollY)
+    // updateLastScroll(window.scrollY)
 
-    if (newScrollPos < lastScrollPos && 
-         (lastScrollPos > 280 && newScrollPos)){
-            slide(true)
-    } else if (newScrollPos > lastScrollPos) {
-          setTimeout(() => slide(false) ,500)
-      }
-      updateNewScroll(lastScrollPos)
-    }
+    // if (newScrollPos < lastScrollPos && 
+    //      (lastScrollPos > 280 && newScrollPos)){
+    //         slide(true)
+    // } else if (newScrollPos > lastScrollPos) {
+    //       setTimeout(() => slide(false) ,500)
+    //   }
+    //   updateNewScroll(lastScrollPos)
+    // }
 
-    React.useEffect(() => {
-        window.addEventListener('scroll',onScroll)
-    })
+    // React.useEffect(() => {
+    //     window.addEventListener('scroll',onScroll)
+    // })
 
 
     return (
