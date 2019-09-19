@@ -10,8 +10,8 @@ const projects = require('../data/projects.json')
 
 const ProjectsList = styled.ul`
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 255px;
+    grid-template-columns: repeat(auto-fill, minmax(225px,1fr));
+    /* grid-template-rows: 255px; */
     grid-gap: 10px;
     margin:0;
 
@@ -63,6 +63,13 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
         transition: .5s;
         visibility: ${props => props.active ? 'visible' : 'hidden'};
         opacity: ${props => props.active ? '1' : '0'};
+
+        .detail-actions-group {
+            width: 100%;
+            margin: 0 20px;
+            display: flex;
+            justify-content: space-evenly;
+        }
     }
 
     &:after {
@@ -96,35 +103,37 @@ export default () => {
                 <div>
                     <h2>Projects</h2>
                     <OutsideClickHandler onOutsideClick={() => setOpen(-1)} >
-                    <ProjectsList>
-                    {projects.map((project: any, index: number) => (
-                        <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
-                            <div
-                                className="project-title"
-                                style={{
-                                height: '150px',
-                                marginBottom: '20px'
-                            }}>
-                                <h4 style={{
-                                display: 'flex',
-                                justifyContent: 'space-between'
-                            }}>{project.name}<span>{project.year}</span></h4> 
-                            <p>{project.description}</p>
-                            </div>
+                        <ProjectsList>
+                        {projects.map((project: any, index: number) => (
+                            <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
+                                <div
+                                    className="project-title"
+                                    style={{
+                                    height: '150px',
+                                    marginBottom: '20px'
+                                }}>
+                                    <h4 style={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between'
+                                }}>{project.name}<span>{project.year}</span></h4> 
+                                <p>{project.description}</p>
+                                </div>
 
-                            <div className="techstack">
-                            {project.techstack.map((tech: string) => (
-                                <Tag key={tech}>{`#${tech}`}</Tag>
-                            ))}
-                                    
-                            </div>
-                            <div className="detail">
-                                <Button onClick={() => window.open(project.url)}>Source</Button>
-                                <Button>View</Button>
-                            </div>
-                        </ProjectItemBox>
-                    ))}
-                    </ProjectsList>
+                                <div className="techstack">
+                                {project.techstack.map((tech: string) => (
+                                    <Tag key={tech}>{`#${tech}`}</Tag>
+                                ))}
+                                        
+                                </div>
+                                <div className="detail">
+                                    <div className="detail-action-group">
+                                        <Button onClick={() => window.open(project.url)}>Source</Button>
+                                        <Button>View</Button>
+                                    </div>
+                                </div>
+                            </ProjectItemBox>
+                        ))}
+                        </ProjectsList>
                     </OutsideClickHandler>
                 </div>
             </Section>
