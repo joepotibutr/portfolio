@@ -19,23 +19,25 @@ const TextInput = styled.input`
 `
 
 export default () => {
-    const [fullName,setFullname] = React.useState()
-    const [email,setEmail] = React.useState()
-    const [message,setMessage] = React.useState()
+    const [fullName,setFullname] = React.useState('')
+    const [email,setEmail] = React.useState('')
+    const [message,setMessage] = React.useState('')
     return (
         <Section height={70}>
             <div style={{ width : '100%', height: '100%'}}>
             <h2>Contact</h2>
-            <form onSubmit={(e) => {e.preventDefault() 
-                }} action="">
+            <form onSubmit={e => {e.preventDefault() 
+            console.log({
+                fullName, email, message
+            })}} action="">
                 <FormInput>
-                    <TextInput required placeholder="Full name*" type="text"/>
+                    <TextInput value={fullName} onChange={(e) => setFullname(e.currentTarget.value)} required placeholder="Full name*" type="text"/>
                 </FormInput>
                 <FormInput>
-                    <TextInput required placeholder="Email*" type="email"/>
+                    <TextInput value={email} onChange={(e) => setEmail(e.currentTarget.value)} required placeholder="Email*" type="email"/>
                 </FormInput>
                 <FormInput>
-                    <textarea required style={{ padding: '5px' ,display: 'block', width: '100%',borderRadius: '4px' }} placeholder="Message*" name="" id="" cols={30} rows={10}></textarea>
+                    <textarea value={message} onChange={(e) => setMessage(e.currentTarget.value)} required style={{ padding: '5px' ,display: 'block', width: '100%',borderRadius: '4px' }} placeholder="Message*" name="" id="" cols={30} rows={10}></textarea>
                 </FormInput>
                 <Button type="submit">Submit</Button>
             </form>
