@@ -38,6 +38,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-helmet": "^5.0.9",
     "@types/styled-components": "^4.1.18",
+    "dotenv": "^8.1.0",
     "install": "^0.13.0",
     "npm": "^6.11.3",
     "prettier": "^1.18.2"
