@@ -19,6 +19,9 @@ const TextInput = styled.input`
 `
 
 export default () => {
+    const [fullName,setFullname] = React.useState()
+    const [email,setEmail] = React.useState()
+    const [message,setMessage] = React.useState()
     return (
         <Section height={70}>
             <div style={{ width : '100%', height: '100%'}}>
