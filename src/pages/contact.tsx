@@ -27,6 +27,7 @@ export default () => {
     const [emailAddress, setEmail] = React.useState('')
     const [message, setMessage] = React.useState('')
     const [loading, setLoading] = React.useState(false)
+    const [validationMsg, setValidationMsg] = React.useState('')
 
     const sendContactMessage = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -36,15 +37,16 @@ export default () => {
                 message,
                 emailAddress
             })
-            alert('successful')
+            setValidationMsg('Sent successful')
         } catch {
-            alert('!!!')
+            setValidationMsg('Email is not valid')
         }
         setLoading(false)
     }
 
     return (
         <Section height={70}>
+            <h2>{validationMsg}</h2>
             <div style={{ width : '100%', height: '100%'}}>
             <h2>Contact</h2>
             <form onSubmit={sendContactMessage} action="">
