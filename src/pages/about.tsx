@@ -16,7 +16,7 @@ export default () => {
                 <div style={{
                     marginRight: '20px'
                 }}>
-                    <Button>View Resume</Button>
+                    <Button onClick={() => window.open('https://drive.google.com/file/d/1oIE0cHlGoacFtfgjx7RjfyuP0G8SksK1/view?usp=sharing')}>View Resume</Button>
                 </div>
                 <div>
                     <NavigationContext.Consumer>
