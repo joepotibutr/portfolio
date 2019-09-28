@@ -39,13 +39,13 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
     justify-content: space-between;
     
     .project-title {
-        transition: .3s ease-in;
+        transition: .3s;
         filter: blur(${props => props.active ? 5 : 0}px);
         opacity: ${props => props.active ? '.5' : '1'};
     }
 
     .techstack {
-        transition: .3s ease-in;
+        transition: .3s;
         filter: blur(${props => props.active ? 5 : 0}px);
         opacity: ${props => props.active ? '.5' : '1'};
     }
@@ -64,11 +64,13 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
         visibility: ${props => props.active ? 'visible' : 'hidden'};
         opacity: ${props => props.active ? '1' : '0'};
 
-        .detail-actions-group {
+        .detail-action-group {
             width: 100%;
             margin: 0 20px;
             display: flex;
+            flex-direction: column;
             justify-content: space-evenly;
+            align-items:center;
         }
     }
 
