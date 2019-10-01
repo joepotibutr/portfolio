@@ -3,6 +3,7 @@ import { Section, Button, FormInput } from '../components'
 import styled from 'styled-components'
 import axios from 'axios'
 import dotenv from 'dotenv'
+import SchemaValidation from '../utils/validation'
 import { Formik } from 'formik'
 
 interface FormValues {
@@ -16,14 +17,23 @@ dotenv.config()
 
 const TextInput = styled.input`
     border-style: none;
-    border: 1px solid;
     display: block;
     width: 100%;
-    border-radius: 4px;
     padding: 5px;
     &:focus {
         outline: none;
     }
+`
+
+const TextArea = styled.textarea`
+    border: none;
+    width: 100%;
+    height: 100%;
+
+    &:focus {
+            outline: none;
+        }
+
 `
 
 const ValidationMessage = styled.div<{ showMessage: boolean }>`
@@ -55,19 +65,20 @@ export default () => {
             <div style={{ width : '100%', height: '100%'}}>
             <h2>Contact</h2>
             <Formik 
+                validate={SchemaValidation}
                 onSubmit={async (values: FormValues) => sendContactMessage(values)}
                 initialValues={{ fullName: '', emailAddress: '', message: '' }}
             >
-                {({ handleSubmit, handleChange }) => (
+                {({ handleSubmit, handleChange, errors, touched }) => (
                 <form onSubmit={handleSubmit}>
-                    <FormInput>
+                    <FormInput name="fullName" errors={errors} touched={touched}>
                         <TextInput name="fullName"  onChange={handleChange} required placeholder="Full name*" type="text"/>
                     </FormInput>
-                    <FormInput>
+                    <FormInput name="emailAddress" errors={errors} touched={touched}>
                         <TextInput name="emailAddress" onChange={handleChange} required placeholder="Email*" type="email"/>
                     </FormInput>
-                    <FormInput>
-                        <textarea name="message" onChange={handleChange} required style={{ padding: '5px' ,display: 'block', width: '100%',borderRadius: '4px' }} placeholder="Message*" cols={30} rows={10}></textarea>
+                    <FormInput name="message" errors={errors} touched={touched}>
+                        <TextArea name="message" onChange={handleChange} required placeholder="Message*" cols={30} rows={10}></TextArea>
                     </FormInput>
                     {loading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
                 </form>
