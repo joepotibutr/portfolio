@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section, Button } from '../components'
+import { Section, Button, FormInput } from '../components'
 import styled from 'styled-components'
 import axios from 'axios'
 import dotenv from 'dotenv'
@@ -13,9 +13,6 @@ interface FormValues {
 
 dotenv.config()
 
-const FormInput = styled.div`
-    margin-bottom:  10px;
-`
 
 const TextInput = styled.input`
     border-style: none;
