@@ -11,13 +11,14 @@ interface Props {
 
 const FormInputStyled = styled.div<{ error: boolean }>`
     margin-bottom:  10px;
-    border: 2px solid;
+    border: 2px solid ${props => props.error ? 'crimson' : 'black'};
     border-radius: 4px;
     overflow: hidden;
 `
 
-export default function FormInput({ errors, touched,children, name }: Props) {
+export default function FormInput({ errors, touched, children, name }: Props) {
     const isError = !!(errors && touched && (errors[name] && touched[name]))
+    console.log('isError', errors)
     return (
         <FormInputStyled error={isError}>
             {children}

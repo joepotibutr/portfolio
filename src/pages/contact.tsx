@@ -65,7 +65,7 @@ export default () => {
             <div style={{ width : '100%', height: '100%'}}>
             <h2>Contact</h2>
             <Formik 
-                validate={SchemaValidation}
+                validationSchema={SchemaValidation}
                 onSubmit={async (values: FormValues) => sendContactMessage(values)}
                 initialValues={{ fullName: '', emailAddress: '', message: '' }}
             >
