@@ -72,13 +72,13 @@ export default () => {
                 {({ handleSubmit, handleChange, errors, touched }) => (
                 <form onSubmit={handleSubmit}>
                     <FormInput name="fullName" errors={errors} touched={touched}>
-                        <TextInput name="fullName"  onChange={handleChange} required placeholder="Full name*" type="text"/>
+                        <TextInput name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
                     </FormInput>
                     <FormInput name="emailAddress" errors={errors} touched={touched}>
-                        <TextInput name="emailAddress" onChange={handleChange} required placeholder="Email*" type="email"/>
+                        <TextInput name="emailAddress" onChange={handleChange} placeholder="Email*" type="email"/>
                     </FormInput>
                     <FormInput name="message" errors={errors} touched={touched}>
-                        <TextArea name="message" onChange={handleChange} required placeholder="Message*" cols={30} rows={10}></TextArea>
+                        <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
                     </FormInput>
                     {loading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
                 </form>
