@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FormikErrors, FormikValues, FormikTouched } from 'formik'
-import { FormFieldEnum } from '../constants'
 
 interface Props {
-    name: FormFieldEnum.fullName | FormFieldEnum.message | FormFieldEnum.emailAddress
+    name: "fullName" | "emailAddress" | "message"
     children: React.ReactChild | JSX.Element
     errors?: FormikErrors<FormikValues>
     touched?: FormikTouched<FormikValues>
