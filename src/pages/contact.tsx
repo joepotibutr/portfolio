@@ -20,6 +20,8 @@ const TextInput = styled.input`
     display: block;
     width: 100%;
     padding: 5px;
+    font-size:15px;
+
     &:focus {
         outline: none;
     }
@@ -29,6 +31,8 @@ const TextArea = styled.textarea`
     border: none;
     width: 100%;
     height: 100%;
+    font-size:15px;
+    padding:5px;
 
     &:focus {
             outline: none;
