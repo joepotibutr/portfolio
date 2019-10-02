@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FormikErrors, FormikValues, FormikTouched } from 'formik'
+import { FormFieldEnum } from '../constants'
 
 interface Props {
-    name: "fullName" | "message" | "emailAddress"
+    name: FormFieldEnum.fullName | FormFieldEnum.message | FormFieldEnum.emailAddress
     children: React.ReactChild | JSX.Element
     errors?: FormikErrors<FormikValues>
     touched?: FormikTouched<FormikValues>
@@ -27,7 +28,6 @@ const FormField = styled.div`
 
 export default function FormInput({ errors, touched, children, name }: Props) {
     const isError = !!(errors && touched && (errors[name] && touched[name]))
-    console.log('isError', errors)
     return (
         <FormField>
             <FormInputStyled error={isError}>
