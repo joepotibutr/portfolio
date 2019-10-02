@@ -2,12 +2,12 @@ import * as Yup from 'yup';
 
 export default Yup.object().shape({
     fullName: Yup.string()
-    .required('Required'),
+    .required('Full name is required'),
 
     emailAddress: Yup.string()
     .email('Invalid email')
-    .required('Required'),
+    .required('Email address is required'),
 
     message: Yup.string()
-    .required('Required'),
+    .required('Message is required'),
 });
