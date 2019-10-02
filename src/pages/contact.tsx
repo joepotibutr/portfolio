@@ -5,6 +5,7 @@ import axios from 'axios'
 import dotenv from 'dotenv'
 import SchemaValidation from '../utils/validation'
 import { Formik } from 'formik'
+import { sleep } from '../utils/helper'
 
 interface FormValues {
     fullName: string,
@@ -48,19 +49,18 @@ export default () => {
     const [loading, setLoading] = React.useState(false)
     const [validationMsg, setValidationMsg] = React.useState('')
 
-    const sendContactMessage = async (values: FormValues) => {
-        console.log(values)
-        try {
-            setLoading(true)
-            await axios.post(process.env.DATAFIRE!, values)
-            setValidationMsg('Sent successful')
-        } catch {
-            setValidationMsg('Email is not valid')
-        }
-        setLoading(false)
-        setTimeout(() => {
+    const sendContactMessage = (values: FormValues) => {
+        setLoading(true)
+        sleep(2000).then(() => {
+            try {
+                axios.post(process.env.DATAFIRE!, values)
+                setValidationMsg('Sent successful')
+            } catch {
+                setValidationMsg('Email is not valid')
+            }
+            setLoading(false)
             setValidationMsg('')
-        }, 1000)
+        })
     }
 
     return (
