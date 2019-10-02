@@ -60,7 +60,7 @@ export default () => {
     }
 
     return (
-        <Section height={70}>
+        <Section height={90}>
             <ValidationMessage showMessage={validationMsg.length > 0}>{validationMsg}</ValidationMessage>
             <div style={{ width : '100%', height: '100%'}}>
             <h2>Contact</h2>
@@ -80,7 +80,9 @@ export default () => {
                     <FormInput name="message" errors={errors} touched={touched}>
                         <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
                     </FormInput>
-                    {loading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
+                    <div>
+                        {loading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
+                    </div>
                 </form>
                 )}
             </Formik>
