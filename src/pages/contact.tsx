@@ -40,6 +40,9 @@ const TextArea = styled.textarea`
         }
 
 `
+const Form = styled.form<{ loading: boolean }>`
+    pointer-events: ${props => props.loading ? 'none' : 'auto'};
+`
 
 const ValidationMessage = styled.div<{ showMessage: boolean }>`
     display: ${props => props.showMessage ? 'block' : 'none'};
@@ -74,7 +77,7 @@ export default () => {
                 initialValues={{ fullName: '', emailAddress: '', message: '' }}
             >
                 {({ handleSubmit, handleChange, errors, touched }) => (
-                <form onSubmit={handleSubmit}>
+                <Form loading={loading} onSubmit={handleSubmit}>
                     <FormInput name="fullName" errors={errors} touched={touched}>
                         <TextInput name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
                     </FormInput>
@@ -87,7 +90,7 @@ export default () => {
                     <div>
                         {loading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
                     </div>
-                </form>
+                </Form>
                 )}
             </Formik>
            
