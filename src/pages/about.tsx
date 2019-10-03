@@ -2,13 +2,26 @@ import React from 'react'
 import {NavigationContext} from './index'
 import { NAVIGATION } from '../constants';
 import { Button, Section } from '../components/'
+import styled from 'styled-components'
 
 const  IndividualPicture = require('../assets/individual.png')
+
+const AboutPage = styled.div`
+    margin-bottom: 20px;
+    display: flex;
+    height: 100%;
+    @media only screen and (max-width: 480px) {
+        flex-direction: column;
+        > div {
+            width: 100% !important;
+        }
+    }
+`
 
 export default () => {
     return (
         <Section height={60}>
-            <div style={{ marginBottom: '20px', display: 'flex', height: '100%' }}>
+            <AboutPage>
                 <div style={{
                     height: '100%',
                     width: '50%',
@@ -34,9 +47,9 @@ export default () => {
                     </div>
                 </div>
                 <div style={{ width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-                    <img style={{ maxWidth: '350px' }} src={IndividualPicture} />
+                    <img style={{ maxWidth: '350px', width: '100%', height: 'auto' }} src={IndividualPicture} />
                 </div>
-            </div>
+            </AboutPage>
         </Section>
     )
 }

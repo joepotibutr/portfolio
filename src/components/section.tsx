@@ -17,6 +17,10 @@ const SectionStyled = styled.section<SectionStyleProps>`
     flex-direction: column;
     height: ${(props) => props.height}vh; 
     margin-top: 100px;
+
+    @media only screen and (max-width: 480px) {
+        height: 90vh;
+    }
 `
 
 export default function Section({ children, height }: Props) {
