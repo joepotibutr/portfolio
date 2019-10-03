@@ -7,7 +7,7 @@ const ButtonStyled = styled.button`
     font-weight:bold;
     font-size: 14px;
     height: 50px;
-    background: black;
+    background: #1C5F9C;
     color: white;
     width: 150px;
     transition: .3s;

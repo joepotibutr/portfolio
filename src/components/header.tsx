@@ -38,9 +38,11 @@ const NavigationLink = styled.h1`
   text-decoration: none;
   margin-right: 10px;
   transition: .3s;
+  color:gray;
+
   &:hover {
     font-size: 1.1em;
-    color: gray;
+    color: black;
   }
 `
 

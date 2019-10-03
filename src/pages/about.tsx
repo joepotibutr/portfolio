@@ -18,7 +18,7 @@ export default () => {
                 }}>
                     <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                         <h1>Hi people</h1>
-                        <h2>I'm Joe and I'm a full stack web developer </h2>
+                        <h2 style={{ color: 'darkgray' }}>I'm Joe and I'm a full stack web developer </h2>
                     </div>
                     <div style={{ width: '100%', display: 'flex' }}>
                         <div style={{ marginRight: '20px' }}>
