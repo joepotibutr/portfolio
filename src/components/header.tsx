@@ -18,12 +18,12 @@ const HeaderStyled = styled.header`
   z-index: 99;
   padding: 0px 20px 20px;
   margin: 0px auto;
-  max-width: 920;
+  max-width: 920px;
 
 `
 
 const HeaderOuterWrapper = styled.div`
-  max-width: 920;
+  max-width: 920px;
   display: flex;
   align-items: center;
   justify-content: space-between;
