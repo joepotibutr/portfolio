@@ -10,7 +10,7 @@ const projects = require('../data/projects.json')
 
 const ProjectsList = styled.ul`
     display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(225px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
     /* grid-template-rows: 255px; */
     grid-gap: 10px;
     margin:0;

@@ -70,30 +70,29 @@ export default () => {
         <Section height={90}>
             <ValidationMessage showMessage={validationMsg.length > 0}>{validationMsg}</ValidationMessage>
             <div style={{ width : '100%', height: '100%'}}>
-            <h2>Contact</h2>
-            <Formik 
-                validationSchema={SchemaValidation}
-                onSubmit={async (values: FormValues) => sendContactMessage(values)}
-                initialValues={{ fullName: '', emailAddress: '', message: '' }}
-            >
-                {({ handleSubmit, handleChange, errors, touched }) => (
-                <Form loading={loading} onSubmit={handleSubmit}>
-                    <FormInput name="fullName" errors={errors} touched={touched}>
-                        <TextInput name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
-                    </FormInput>
-                    <FormInput name="emailAddress" errors={errors} touched={touched}>
-                        <TextInput name="emailAddress" onChange={handleChange} placeholder="Email*" type="email"/>
-                    </FormInput>
-                    <FormInput name="message" errors={errors} touched={touched}>
-                        <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
-                    </FormInput>
-                    <div>
-                        {loading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
-                    </div>
-                </Form>
-                )}
-            </Formik>
-           
+                <h2>Contact</h2>
+                <Formik 
+                    validationSchema={SchemaValidation}
+                    onSubmit={async (values: FormValues) => sendContactMessage(values)}
+                    initialValues={{ fullName: '', emailAddress: '', message: '' }}
+                >
+                    {({ handleSubmit, handleChange, errors, touched }) => (
+                        <Form loading={loading} onSubmit={handleSubmit}>
+                            <FormInput name="fullName" errors={errors} touched={touched}>
+                                <TextInput name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
+                            </FormInput>
+                            <FormInput name="emailAddress" errors={errors} touched={touched}>
+                                <TextInput name="emailAddress" onChange={handleChange} placeholder="Email*" type="email"/>
+                            </FormInput>
+                            <FormInput name="message" errors={errors} touched={touched}>
+                                <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
+                            </FormInput>
+                            <div>
+                                {loading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
+                            </div>
+                        </Form>
+                    )}
+                </Formik>
             </div>
         </Section>
     )

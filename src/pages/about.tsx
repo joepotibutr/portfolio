@@ -33,8 +33,8 @@ export default () => {
                         </div>
                     </div>
                 </div>
-                <div style={{ width: '50%', display: 'flex', alignItems: 'center' }}>
-                            <img src={IndividualPicture} />
+                <div style={{ width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+                    <img style={{ maxWidth: '350px' }} src={IndividualPicture} />
                 </div>
             </div>
         </Section>
