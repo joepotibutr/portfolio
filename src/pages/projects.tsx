@@ -114,10 +114,10 @@ export default () => {
                                     height: '150px',
                                     marginBottom: '20px'
                                 }}>
-                                    <h4 style={{
+                                <h5 style={{
                                     display: 'flex',
                                     justifyContent: 'space-between'
-                                }}>{project.name}<span>{project.year}</span></h4> 
+                                }}>{project.name}<span>{project.year}</span></h5> 
                                 <p>{project.description}</p>
                                 </div>
 
