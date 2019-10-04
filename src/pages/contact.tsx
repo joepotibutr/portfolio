@@ -40,8 +40,8 @@ const TextArea = styled.textarea`
         }
 
 `
-const Form = styled.form<{ loading: boolean }>`
-    pointer-events: ${props => props.loading ? 'none' : 'auto'};
+const Form = styled.form<{ isLoading: boolean }>`
+    pointer-events: ${props => props.isLoading ? 'none' : 'auto'};
 `
 
 const ValidationMessage = styled.div<{ showMessage: boolean }>`
@@ -49,7 +49,7 @@ const ValidationMessage = styled.div<{ showMessage: boolean }>`
 `
 
 export default () => {
-    const [loading, setLoading] = React.useState(false)
+    const [isLoading, setLoading] = React.useState(false)
     const [validationMsg, setValidationMsg] = React.useState('')
 
     const sendContactMessage = (values: FormValues) => {
@@ -65,7 +65,7 @@ export default () => {
             setValidationMsg('')
         })
     }
-
+    
     return (
         <Section height={90}>
             <ValidationMessage showMessage={validationMsg.length > 0}>{validationMsg}</ValidationMessage>
@@ -77,7 +77,7 @@ export default () => {
                     initialValues={{ fullName: '', emailAddress: '', message: '' }}
                 >
                     {({ handleSubmit, handleChange, errors, touched }) => (
-                        <Form loading={loading} onSubmit={handleSubmit}>
+                        <Form isLoading={isLoading} onSubmit={handleSubmit}>
                             <FormInput name="fullName" errors={errors} touched={touched}>
                                 <TextInput name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
                             </FormInput>
@@ -88,7 +88,7 @@ export default () => {
                                 <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
                             </FormInput>
                             <div>
-                                {loading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
+                                {isLoading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
                             </div>
                         </Form>
                     )}
