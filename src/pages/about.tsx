@@ -41,6 +41,7 @@ const AboutPage = styled.div`
             grid-row:2/3;
         }
         .tour-button {
+            justify-content: center !important;
             grid-column:1/2;
             grid-row: 3/4;
         }
@@ -55,7 +56,7 @@ export default () => {
                     <h1>Hi people</h1>
                     <h2 style={{ color: 'darkgray' }}>I'm Joe and I'm a full stack web developer </h2>
                 </div>
-                <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'center' }}>
+                <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'start' }}>
                     <div style={{ marginRight: '20px' }}>
                         <Button onClick={() => window.open('https://drive.google.com/file/d/1oIE0cHlGoacFtfgjx7RjfyuP0G8SksK1/view?usp=sharing')}>View Resume</Button>
                     </div>
