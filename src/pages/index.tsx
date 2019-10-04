@@ -48,15 +48,19 @@ const IndexPage = () => {
     <NavigationContext.Provider value={gotoNavigation} >
       <Layout>
         <SEO title="Home" />
+        
         <div ref={aboutRef}>
           <About  />
         </div>
-        <div ref={expRef}>
-          <Experience  />
-        </div>
+
         <div ref={projectsRef}>
           <Projects  />
         </div>
+
+        <div ref={expRef}>
+          <Experience  />
+        </div>
+
         <div ref={contactRef}>
           <Contact  />
         </div>
