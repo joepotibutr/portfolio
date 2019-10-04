@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Section } from '../components'
-import OutsideClickHandler from 'react-outside-click-handler';
 import { Button } from '../components'
+import { useOutsideClick } from '../utils/helper'
 
 
 const projects = require('../data/projects.json')
@@ -99,12 +99,17 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
 
 export default () => {
         const [currentIdx,setOpen] = React.useState(-1)
+        const outsideRef = React.useRef(null)
+
+        useOutsideClick(outsideRef, () => {
+            setOpen(-1)
+        })
 
         return (
             <Section height={70}>
                 <div>
                     <h2>Projects</h2>
-                    <OutsideClickHandler onOutsideClick={() => setOpen(-1)} >
+                    <div ref={outsideRef} >
                         <ProjectsList>
                         {projects.map((project: any, index: number) => (
                             <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
@@ -136,7 +141,7 @@ export default () => {
                             </ProjectItemBox>
                         ))}
                         </ProjectsList>
-                    </OutsideClickHandler>
+                    </div>
                 </div>
             </Section>
         )
