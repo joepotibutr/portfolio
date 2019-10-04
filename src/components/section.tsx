@@ -3,10 +3,12 @@ import styled from 'styled-components'
 
 interface Props {
     height: number;
+    mobile?: number;
     children?: React.ReactChild | React.ReactNode;
 }
 
 interface SectionStyleProps {
+    mobile?: number
     height: number
 }
 
@@ -19,13 +21,13 @@ const SectionStyled = styled.section<SectionStyleProps>`
     margin-top: 100px;
 
     @media only screen and (max-width: 480px) {
-        height: 90vh;
+        height: ${(props) => props.mobile ? props.mobile : props.height}vh; 
     }
 `
 
-export default function Section({ children, height }: Props) {
+export default function Section({ children, height, mobile }: Props) {
     return (
-        <SectionStyled height={height}>
+        <SectionStyled mobile={mobile} height={height}>
             {children}
         </SectionStyled>
     )
