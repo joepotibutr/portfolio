@@ -11,15 +11,14 @@ const ButtonStyled = styled.button`
     color: white;
     width: 150px;
     transition: .3s;
+    border:none;
     
     &:focus {
         outline: 0;
     }
 
     &:hover {
-        background:white;
-        color:black;
-        border: 1px solid black;
+        background:#0e2f4e;
     }
 `
 
