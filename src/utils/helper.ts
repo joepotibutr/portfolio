@@ -5,8 +5,8 @@ export const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, 
 
 
 export const useOutsideClick = (ref: MutableRefObject<null | HTMLDivElement>, callback: () => void) => {
-  const handleClick = (e: any) => {
-    if (ref.current && !ref.current.contains(e.target)) {
+  const handleClick = (e: MouseEvent) => {
+    if (ref.current && !ref.current.contains(e.target as Node)) {
       callback();
     }
   };
