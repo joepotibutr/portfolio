@@ -134,8 +134,14 @@ export default () => {
                                 </div>
                                 <div className="detail">
                                     <div className="detail-action-group">
-                                        <Button onClick={() => window.open(project.url)}>Source</Button>
-                                        <Button>View</Button>
+                                        <div>
+                                            <h3>Production wasn't publish yet</h3>
+                                            <h3>You can see an example of source code and image below</h3>
+                                        </div>
+                                        <div>
+                                            <Button onClick={() => window.open(project.url)}>Source</Button>
+                                            <Button>View</Button>
+                                        </div>
                                     </div>
                                 </div>
                             </ProjectItemBox>
