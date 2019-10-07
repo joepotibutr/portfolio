@@ -141,7 +141,7 @@ export default () => {
                                         </div>
                                         <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
                                             <Button onClick={() => window.open(project.url)}>Source</Button>
-                                            <Button>View</Button>
+                                            <Button>Images</Button>
                                         </div>
                                     </div>
                                 </div>
