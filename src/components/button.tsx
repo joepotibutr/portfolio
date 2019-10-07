@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ButtonStyled = styled.button`
+const ButtonStyled = styled.button<{ fluid?: boolean }>`
     cursor:pointer;
     border-radius: 4px;
     font-weight:bold;
     font-size: 14px;
-    height: 50px;
+    height: ${props => props.fluid ? '100%' : '50px'};
     background: #1C5F9C;
     color: white;
-    width: 150px;
+    width: ${props => props.fluid ? '100%' : '150px'};
     transition: .3s;
     border:none;
     
@@ -22,9 +22,16 @@ const ButtonStyled = styled.button`
     }
 `
 
-const Button = ({ children, onClick, type }: { children: React.ReactChild, onClick?: () => void, type?: 'submit' }) => {
+interface IButtonProps {
+    children: React.ReactChild,
+    onClick?: () => void,
+    type?: 'submit',
+    fluid?: boolean 
+}
+
+const Button = ({ children, onClick, type, fluid }: IButtonProps) => {
     return (
-        <ButtonStyled type={type} onClick={onClick}>
+        <ButtonStyled fluid={fluid} type={type} onClick={onClick}>
             {children}
         </ButtonStyled>
     )
