@@ -9,6 +9,10 @@ import { NAVIGATION } from "../constants";
 import Projects from "./projects";
 import Contact from "./contact";
 
+import smoothscroll from 'smoothscroll-polyfill';
+
+smoothscroll.polyfill();
+
 
 const aboutRef: React.RefObject<HTMLDivElement> = React.createRef()
 const expRef: React.RefObject<HTMLDivElement> = React.createRef()
