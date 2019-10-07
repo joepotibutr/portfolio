@@ -137,11 +137,11 @@ export default () => {
                                     <div className="detail-action-group">
                                         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                                             <h4>Production wasn't publish yet</h4>
-                                            <p>You can see an example of source code and images below.</p>
+                                            <p>You can see an example of source code and images of this project.</p>
                                         </div>
                                         <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
-                                            <Button onClick={() => window.open(project.url)}>Source</Button>
-                                            <Button>Images</Button>
+                                            <Button onClick={() => window.open(project.url)}>Go to Source</Button>
+                                            <Button>See Images</Button>
                                         </div>
                                     </div>
                                 </div>
