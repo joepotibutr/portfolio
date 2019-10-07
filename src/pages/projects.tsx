@@ -65,11 +65,12 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
         opacity: ${props => props.active ? '1' : '0'};
 
         .detail-action-group {
+            justify-content: center;
+            height: 100%;
             width: 100%;
             margin: 0 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
             align-items:center;
         }
     }
@@ -134,11 +135,11 @@ export default () => {
                                 </div>
                                 <div className="detail">
                                     <div className="detail-action-group">
-                                        <div>
-                                            <h3>Production wasn't publish yet</h3>
-                                            <h3>You can see an example of source code and image below</h3>
+                                        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                                            <h4>Production wasn't publish yet</h4>
+                                            <p>You can see an example of source code and images below.</p>
                                         </div>
-                                        <div>
+                                        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
                                             <Button onClick={() => window.open(project.url)}>Source</Button>
                                             <Button>View</Button>
                                         </div>
