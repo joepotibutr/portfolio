@@ -8,6 +8,7 @@ const Slider = styled.div<{ slideUp: boolean, height: number }>`
     transition: .5s ease-in;
     transform: translateY(${props => props.slideUp ?  `-${props.height}px` : 0});
     position:fixed;
+    z-index: 9;
 `
 
 interface Props {
