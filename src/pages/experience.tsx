@@ -1,13 +1,13 @@
 import React from 'react'
 import { Section } from '../components'
-const experiences = require('../data/experiences.json')
+const experienceList = require('../data/experience-list.json')
 
 export default () => {
         return (
           <Section height={40}>
             <div>
-              <h2>Experiences</h2>
-              {experiences.map((exp: any) => (
+              <h2>Experience</h2>
+              {experienceList.map((exp: any) => (
               <div key={exp.title}>
                 <title>{exp.title}</title>
                 <h4>{exp.date}</h4>
