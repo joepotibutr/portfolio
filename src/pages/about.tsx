@@ -1,10 +1,11 @@
 import React from 'react'
 import {NavigationContext} from './index'
 import { NAVIGATION } from '../constants';
-import { Button, Section } from '../components/'
+import { Button, Section, Wave } from '../components/'
 import styled from 'styled-components'
 
-const  IndividualPicture = require('../assets/individual.png')
+
+const  IndividualPicture = require('../images/individual.png')
 
 const AboutPage = styled.div`
     margin-bottom: 20px;
@@ -48,9 +49,12 @@ const AboutPage = styled.div`
     }
 `
 
+
+
 export default () => {
     return (
         <Section height={60}>
+            <Wave />
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people</h1>
