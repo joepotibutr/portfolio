@@ -54,11 +54,13 @@ const AboutPage = styled.div`
 export default () => {
     return (
         <Section height={60}>
-            <Wave />
+            <div style={{ width: '300px',height: '300px' }}>
+                <Wave />
+            </div>
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people</h1>
-                    <h2 style={{ color: 'darkgray' }}>I'm Joe and I'm a full stack web developer </h2>
+                    <h3>I'm Joe and I'm a full stack web developer </h3>
                 </div>
                 <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'start' }}>
                     <div style={{ marginRight: '20px' }}>
