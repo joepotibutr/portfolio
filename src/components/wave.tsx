@@ -6,7 +6,7 @@ const WaveStyling = styled.svg`
     height: 1000px;
     position: absolute;
     z-index: -1;
-    fill-opacity: .3;
+    fill-opacity: .1;
     top: -170px;
     left: 400px;
 

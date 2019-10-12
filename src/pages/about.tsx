@@ -54,9 +54,7 @@ const AboutPage = styled.div`
 export default () => {
     return (
         <Section height={60}>
-            <div style={{ width: '300px',height: '300px' }}>
                 <Wave />
-            </div>
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people</h1>
