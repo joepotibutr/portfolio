@@ -36,7 +36,7 @@ const NavigationLink = styled.h1`
   font-size: 1em;
   margin: 0;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 25px;
   transition: .3s;
   color:gray;
 
