@@ -13,6 +13,7 @@ export default () => {
                 <h4>{exp.date}</h4>
                 <b>{exp.company}</b>
                 <p>{exp.description}</p>
+                <hr/>
               </div>))}
             </div>  
           </Section>

@@ -111,7 +111,6 @@ hr {
   height: 0;
   overflow: visible;
 }
-button,
 input,
 optgroup,
 select,

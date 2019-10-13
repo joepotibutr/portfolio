@@ -33,13 +33,16 @@ const AboutPage = styled.div`
     @media only screen and (max-width: 720px) {
         grid-template-columns: auto;
         grid-template-rows: min-content;
+
         .welcome {
+            padding: 0 20px;
+            grid-row:2/3;
             text-align:center;
         }
         
         .self-cartoon {
             grid-column:1/2;
-            grid-row:2/3;
+            grid-row:1/2;
         }
         .tour-button {
             justify-content: center !important;

@@ -20,8 +20,8 @@ const SectionStyled = styled.section<SectionStyleProps>`
     height: ${(props) => props.height}vh; 
     margin-top: 100px;
 
-    @media only screen and (max-width: 480px) {
-        height: ${(props) => props.mobile ? props.mobile : props.height}vh; 
+    @media only screen and (max-width: 720px) {
+        height: ${(props) => props.mobile ? props.mobile : 90}vh; 
     }
 `
 
