@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
+import GlobalStyle from '../components/global-style'
 import About from './about'
 import Experience from './experience'
 import { NAVIGATION } from "../constants";
@@ -45,6 +45,7 @@ const IndexPage = () => {
 
   return (
     <NavigationContext.Provider value={gotoNavigation} >
+      <GlobalStyle />
       <Layout>
         <SEO title="Home" />
         
