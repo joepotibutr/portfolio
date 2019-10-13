@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
+
 * {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen;
 }
@@ -625,3 +629,6 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+
+`
