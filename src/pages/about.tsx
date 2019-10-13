@@ -10,7 +10,7 @@ const  IndividualPicture = require('../images/individual.png')
 const AboutPage = styled.div`
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
     height: 100%;
     width:100%;
 

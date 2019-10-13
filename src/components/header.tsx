@@ -67,7 +67,7 @@ const Header = ({ siteTitle }: any) => (
                     textDecoration: `none`, }}>
         
                     <span>{siteTitle} -</span>
-                    <span style={{ fontWeight: 'lighter' }}> Full Stack Engineer</span>
+                    <span style={{ fontWeight: 'lighter' }}> Full Stack Developer</span>
                   </h1>
                 </div>
                 <NavigationContext.Consumer>
