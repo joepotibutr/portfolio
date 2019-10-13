@@ -57,7 +57,8 @@ export default () => {
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people!</h1>
-                    <h3>I'm Joe and I'm a full stack web developer </h3>
+                    <h3>I'm Joe and I'm a full stack web developer</h3>
+                    <p>I'm a developer with extensive experience from many projects and full-time career. Professional website development to provide business needs.</p>
                 </div>
                 <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'start' }}>
                     <div style={{ marginRight: '20px' }}>
