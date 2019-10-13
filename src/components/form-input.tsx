@@ -22,7 +22,7 @@ const ErrorMesssage = styled.span`
 `
 
 const FormField = styled.div`
-    margin-bottom:  10px;
+    margin-bottom:  20px;
 `
 
 export default function FormInput({ errors, touched, children, name }: Props) {

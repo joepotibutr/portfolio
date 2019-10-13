@@ -7,6 +7,8 @@ import SchemaValidation from '../utils/validation'
 import { Formik } from 'formik'
 import { sleep } from '../utils/helper'
 
+const PoepleTalkingImg = require('../images/people-talking.png')
+
 interface FormValues {
     fullName: string,
     emailAddress: string,
@@ -22,6 +24,8 @@ const TextInput = styled.input`
     width: 100%;
     padding: 5px;
     font-size:15px;
+    padding-left:15px;
+    height:40px;
 
     &:focus {
         outline: none;
@@ -33,7 +37,8 @@ const TextArea = styled.textarea`
     width: 100%;
     height: 100%;
     font-size:15px;
-    padding:5px;
+    padding:10px;
+    padding-left:15px;
 
     &:focus {
             outline: none;
@@ -69,30 +74,34 @@ export default () => {
     return (
         <Section height={90}>
             <ValidationMessage showMessage={validationMsg.length > 0}>{validationMsg}</ValidationMessage>
-            <div style={{ width : '100%', height: '100%'}}>
-                <h2>Contact</h2>
-                <Formik 
-                    validationSchema={SchemaValidation}
-                    onSubmit={async (values: FormValues) => sendContactMessage(values)}
-                    initialValues={{ fullName: '', emailAddress: '', message: '' }}
-                >
-                    {({ handleSubmit, handleChange, errors, touched }) => (
-                        <Form isLoading={isLoading} onSubmit={handleSubmit}>
-                            <FormInput name="fullName" errors={errors} touched={touched}>
-                                <TextInput name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
-                            </FormInput>
-                            <FormInput name="emailAddress" errors={errors} touched={touched}>
-                                <TextInput name="emailAddress" onChange={handleChange} placeholder="Email*" type="email"/>
-                            </FormInput>
-                            <FormInput name="message" errors={errors} touched={touched}>
-                                <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
-                            </FormInput>
-                            <div>
-                                {isLoading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
-                            </div>
-                        </Form>
-                    )}
-                </Formik>
+            <div style={{ display: 'flex', flexDirection: 'row-reverse', width:'100%' }}>
+                <div style={{ width: '40%', display: 'flex', justifyContent: 'center' }}>
+                    <img style={{ position: 'absolute', maxWidth: '235px', width: '100%', height: 'auto' }} src={PoepleTalkingImg} />
+                </div>
+                <div style={{ width: '60%' }}>
+                    <Formik 
+                        validationSchema={SchemaValidation}
+                        onSubmit={async (values: FormValues) => sendContactMessage(values)}
+                        initialValues={{ fullName: '', emailAddress: '', message: '' }}
+                    >
+                        {({ handleSubmit, handleChange, errors, touched }) => (
+                            <Form isLoading={isLoading} onSubmit={handleSubmit}>
+                                <FormInput name="fullName" errors={errors} touched={touched}>
+                                    <TextInput name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
+                                </FormInput>
+                                <FormInput name="emailAddress" errors={errors} touched={touched}>
+                                    <TextInput name="emailAddress" onChange={handleChange} placeholder="Email*" type="email"/>
+                                </FormInput>
+                                <FormInput name="message" errors={errors} touched={touched}>
+                                    <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
+                                </FormInput>
+                                <div>
+                                    {isLoading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
+                                </div>
+                            </Form>
+                        )}
+                    </Formik>
+                </div>
             </div>
         </Section>
     )

@@ -56,7 +56,7 @@ export default () => {
         <Section height={60}>
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
-                    <h1>Hi people</h1>
+                    <h1>Hi people!</h1>
                     <h3>I'm Joe and I'm a full stack web developer </h3>
                 </div>
                 <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'start' }}>
