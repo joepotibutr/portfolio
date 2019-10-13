@@ -148,6 +148,7 @@ export default () => {
                             </ProjectItemBox>
                         ))}
                         </ProjectsList>
+                        <div>See more projects</div>
                     </div>
                 </div>
             </Section>
