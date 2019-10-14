@@ -15,6 +15,7 @@ const AboutPage = styled.div`
     width:100%;
 
     .welcome {
+        padding: 0;
         grid-column:1/2;
         grid-row:1/2;
     }
