@@ -22,12 +22,17 @@ const AboutPage = styled.div`
 
     .self-cartoon {
         grid-column:2/3;
-        grid-row:1/3;
+        grid-row:1/4;
     }
 
     .tour-button {
         grid-column:1/2;
         grid-row: 2/3;
+    }
+
+    .social {
+        grid-column:1/2;
+        grid-row: 3/4;
     }
 
 
@@ -62,16 +67,16 @@ export default () => {
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people!</h1>
                     <h3>I'm Joe and I'm a full stack web developer</h3>
-                    <p>I'm a developer with extensive experience from many projects and full-time career. Professional website development to provide business needs.</p>
+                    <p>I'm a developer with extensive experience from many projects and full-time career. Latest web development technologies that was used to provide business needs.</p>
                 </div>
                 <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'start' }}>
                     <div style={{ marginRight: '20px' }}>
-                        <Button onClick={() => window.open('https://drive.google.com/file/d/1oIE0cHlGoacFtfgjx7RjfyuP0G8SksK1/view?usp=sharing')}>View Resume</Button>
+                        <Button onClick={() => window.open('https://drive.google.com/file/d/1oIE0cHlGoacFtfgjx7RjfyuP0G8SksK1/view?usp=sharing')}>View resume</Button>
                     </div>
                     <div>
                         <NavigationContext.Consumer>
                         {(goto) => (
-                            <Button onClick={() => goto(NAVIGATION.CONTACT)}>Get in touch</Button>
+                            <Button transparent onClick={() => goto(NAVIGATION.CONTACT)}>Get in touch <span style={{ color: 'lightblue'}}>v</span></Button>
                         )}
                         </NavigationContext.Consumer>
                     </div>
@@ -82,6 +87,7 @@ export default () => {
                         <Wave />
                     </div>
                 </div>
+                <div className="social">G / in</div>
             </AboutPage>
         </Section>
     )
