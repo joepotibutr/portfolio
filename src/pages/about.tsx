@@ -36,6 +36,7 @@ const AboutPage = styled.div`
     .social {
         display:flex;
         justify-content: flex-start;
+        align-items: center;
         grid-column:1/2;
         grid-row: 3/4;
 
@@ -61,6 +62,8 @@ const AboutPage = styled.div`
         grid-template-rows: min-content;
 
         .welcome {
+            max-width: 500px;
+            margin: 0 auto;
             padding: 0 20px;
             grid-row:2/3;
             text-align:center;
@@ -69,6 +72,11 @@ const AboutPage = styled.div`
         .self-cartoon {
             grid-column:1/2;
             grid-row:1/2;
+            margin: 0 auto;
+            max-width: 250px;
+            svg {
+                transform: scale(2.5);
+            }
         }
 
         .tour-button {
