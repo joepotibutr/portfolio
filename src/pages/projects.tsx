@@ -107,7 +107,7 @@ export default () => {
         })
 
         return (
-            <Section height={70}>
+            <Section height={50}>
                 <div>
                     <h2>Projects</h2>
                     <div ref={outsideRef} >
@@ -148,7 +148,7 @@ export default () => {
                             </ProjectItemBox>
                         ))}
                         </ProjectsList>
-                        <a href="">See more projects</a>
+                        <a style={{ color: '#1C5F9C' }} href="https://bitbucket.org/josphr/">See more projects</a>
                     </div>
                 </div>
             </Section>
