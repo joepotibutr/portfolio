@@ -4,6 +4,9 @@ import { NAVIGATION } from '../constants';
 import { Button, Section, Wave } from '../components/'
 import styled from 'styled-components'
 
+const  GithubLogo = require('../assets/github-logo.png')
+const  LinkedinLogo = require('../assets/linkedin-letters.png')
+const  LetterLogo = require('../assets/envelope.png')
 
 const  IndividualPicture = require('../images/individual.png')
 
@@ -31,8 +34,25 @@ const AboutPage = styled.div`
     }
 
     .social {
+        display:flex;
+        justify-content: flex-start;
         grid-column:1/2;
         grid-row: 3/4;
+
+        .github,.linkedin {
+            margin-right: 30px;
+        }
+
+        .email {
+            transform:translate(0, 2px);
+        }
+
+        .logo {
+            max-width: 15px;
+            width: 100%;
+            height: auto;
+            cursor:pointer;
+        }
     }
 
 
@@ -50,10 +70,15 @@ const AboutPage = styled.div`
             grid-column:1/2;
             grid-row:1/2;
         }
+
         .tour-button {
             justify-content: center !important;
             grid-column:1/2;
             grid-row: 3/4;
+        }
+        .social {
+            justify-content: center;
+            grid-row: 4/5;
         }
     }
 `
@@ -67,7 +92,7 @@ export default () => {
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people!</h1>
                     <h3>I'm Joe and I'm a full stack web developer</h3>
-                    <p>I'm a developer with extensive experience from many projects and full-time career. Latest web development technologies that was used to provide business needs.</p>
+                    <p style={{ margin: 0 }}>I'm a developer with extensive experience from many projects and full-time career. Latest web development technologies that was used to provide business needs.</p>
                 </div>
                 <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'start' }}>
                     <div style={{ marginRight: '20px' }}>
@@ -87,7 +112,17 @@ export default () => {
                         <Wave />
                     </div>
                 </div>
-                <div className="social">G / in</div>
+                <div className="social">
+                    <div className="github">
+                        <img className="logo" src={GithubLogo} alt=""/>
+                    </div>
+                    <div className="linkedin">
+                        <img className="logo" src={LinkedinLogo} alt=""/>
+                    </div>
+                    <div className="email">
+                        <img className="logo" src={LetterLogo} alt=""/>
+                    </div>
+                </div>
             </AboutPage>
         </Section>
     )
