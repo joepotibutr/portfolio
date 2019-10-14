@@ -21,14 +21,14 @@ const ErrorMesssage = styled.span`
     color: firebrick;
 `
 
-const FormField = styled.div`
-    margin-bottom:  20px;
+const FormField = styled.div<{ error: boolean }>`
+    margin-bottom:  ${props => props.error ? 0 : 20}px;
 `
 
 export default function FormInput({ errors, touched, children, name }: Props) {
     const isError = !!(errors && touched && (errors[name] && touched[name]))
     return (
-        <FormField>
+        <FormField error={isError}>
             <FormInputStyled error={isError}>
                 {children}
             </FormInputStyled>
