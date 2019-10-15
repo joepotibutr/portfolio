@@ -1,15 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ButtonStyled = styled.button<{ fluid?: boolean, transparent?: boolean }>`
+const buttonSize = {
+    fluid: {
+        width: '100%',
+        height: '100%'
+    },
+    normal: {
+        width: '150px',
+        height: '45px'
+    },
+    small: {
+        width: '130px',
+        height: '40px'
+    }
+}
+
+const ButtonStyled = styled.button<IButtonProps>`
     cursor:pointer;
     border-radius: 4px;
     font-weight:bold;
     font-size: 14px;
-    height: ${props => props.fluid ? '100%' : '45px'};
+    height: ${props => buttonSize[props.size!].height};
     background: #1C5F9C;
     color: white;
-    width: ${props => props.fluid ? '100%' : '150px'};
+    width: ${props => buttonSize[props.size!].width};
     transition: .3s;
     border:none;
     
@@ -31,16 +46,20 @@ interface IButtonProps {
     children: React.ReactNode
     onClick?: () => void,
     type?: 'submit',
-    fluid?: boolean 
+    size?: 'fluid' | 'small' | 'normal'
     transparent?: boolean
 }
 
-const Button = ({ children, onClick, type, fluid, transparent }: IButtonProps) => {
+const Button = (props : IButtonProps) => {
     return (
-        <ButtonStyled transparent={transparent} fluid={fluid} type={type} onClick={onClick}>
-            {children}
+        <ButtonStyled {...props}>
+            {props.children}
         </ButtonStyled>
     )
+}
+
+Button.defaultProps = {
+    size: 'normal'
 }
 
 export default Button
