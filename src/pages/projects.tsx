@@ -117,7 +117,7 @@ export default () => {
                                 <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
                                     <ReactResizeDetector handleWidth>
                                     {({ width }: { width: number }) => {
-                                        const size = width <= 280 ? 'small' : 'normal'
+                                        const size = width <= 300 ? 'small' : 'normal'
                                         return (<>
                                             <div
                                                 className="project-title"
