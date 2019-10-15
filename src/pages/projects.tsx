@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Section } from '../components'
 import { Button } from '../components'
 import { useOutsideClick } from '../utils/helper'
+import ReactResizeDetector from 'react-resize-detector'
 
 
 const projects = require('../data/projects.json')
@@ -113,38 +114,44 @@ export default () => {
                     <div ref={outsideRef} >
                         <ProjectsList>
                         {projects.map((project: any, index: number) => (
-                            <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
-                                <div
-                                    className="project-title"
-                                    style={{
-                                    height: '150px',
-                                    marginBottom: '20px'
-                                }}>
-                                <h5 style={{
-                                    display: 'flex',
-                                    justifyContent: 'space-between'
-                                }}>{project.name}<span>{project.year}</span></h5> 
-                                <p>{project.description}</p>
-                                </div>
-
-                                <div className="techstack">
-                                {project.techstack.map((tech: string) => (
-                                    <Tag key={tech}>{`#${tech}`}</Tag>
-                                ))}
-                                        
-                                </div>
-                                <div className="detail">
-                                    <div className="detail-action-group">
-                                        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                                            <h4>Production wasn't publish yet</h4>
-                                            <p>You can see an example of source code and images of this project.</p>
-                                        </div>
-                                        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
-                                            <Button onClick={() => window.open(project.url)}>Go to Source</Button>
-                                            <Button>See Images</Button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
+                                    <ReactResizeDetector handleWidth>
+                                    {({ width }: { width: number }) => {
+                                        const size = width <= 280 ? 'small' : 'normal'
+                                        return (<>
+                                            <div
+                                                className="project-title"
+                                                style={{
+                                                height: '150px',
+                                                marginBottom: '20px'
+                                            }}>
+                                                <h5 style={{
+                                                    display: 'flex',
+                                                    justifyContent: 'space-between'
+                                                }}>{project.name} {width}<span>{project.year}</span></h5> 
+                                                <p>{project.description}</p>
+                                            </div>
+            
+                                            <div className="techstack">
+                                            {project.techstack.map((tech: string) => (
+                                                <Tag key={tech}>{`#${tech}`}</Tag>
+                                            ))}
+                                            </div>
+                                            <div className="detail">
+                                                <div className="detail-action-group">
+                                                    <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+                                                        <h4>Production wasn't publish yet</h4>
+                                                        <p>You can see an example of source code and images of this project.</p>
+                                                    </div>
+                                                    <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
+                                                        <Button size={size} onClick={() => window.open(project.url)}>Go to Source</Button>
+                                                        <Button size={size}>See Images</Button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </>)
+                                    }}
+                                    </ReactResizeDetector>
                             </ProjectItemBox>
                         ))}
                         </ProjectsList>
