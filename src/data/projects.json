@@ -1,7 +1,7 @@
 [{
     "name": "Ecommerce Clone",
     "github": "https://github.com",
-    "thumbnail": "",
+    "thumbnail": [],
     "link": "#",
     "techstack": ["react","redux","node","mongodb"],
     "description": "Ecommerce Clone, Shopping cart and member system for customer and CMS platform for owner to manage stock",
@@ -9,8 +9,8 @@
 },
 {
     "name": "Spotify Clone",
-    "github": "https://github.com",
-    "thumbnail": "",
+    "github": "https://github.com/vchrpng/spotify-player",
+    "thumbnail": [],
     "link": "#",
     "techstack": ["react","redux-saga","spotify-api"],
     "description": "Spotify Clone, Using this app like a real spotify with Spotify API",
