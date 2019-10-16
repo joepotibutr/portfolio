@@ -121,13 +121,13 @@ export default () => {
                     </div>
                 </div>
                 <div className="social">
-                    <a href="https://www.github.com/vchrpng" className="github">
+                    <a target="_blank" href="https://www.github.com/vchrpng" className="github">
                         <img className="logo" src={GithubLogo} alt=""/>
                     </a>
-                    <a href="https://www.linkedin.com/in/vchrpng" className="linkedin">
+                    <a target="_blank" href="https://www.linkedin.com/in/vchrpng" className="linkedin">
                         <img className="logo" src={LinkedinLogo} alt=""/>
                     </a>
-                    <a href={`mailto:vchrpng@gmail.com`} className="email">
+                    <a target="_blank" href={`mailto:vchrpng@gmail.com`} className="email">
                         <img className="logo" src={LetterLogo} alt=""/>
                     </a>
                 </div>
