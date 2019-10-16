@@ -21,7 +21,7 @@ const SectionStyled = styled.section<SectionStyleProps>`
     margin-top: 100px;
 
     @media only screen and (max-width: 720px) {
-        height: ${(props) => props.mobile ? props.mobile : 700}px; 
+        min-height: ${(props) => props.mobile ? props.mobile : 700}px; 
     }
 `
 
