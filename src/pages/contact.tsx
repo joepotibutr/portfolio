@@ -20,6 +20,9 @@ const ContactSection = styled.div`
         > div {
             width: 100% !important; 
         }
+        img {
+            max-width: 160px !important;
+        }
     }
 `
 
