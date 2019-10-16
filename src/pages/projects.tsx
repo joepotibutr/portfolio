@@ -144,7 +144,7 @@ export default () => {
                                                         <p>You can see an example of source code and images of this project.</p>
                                                     </div>
                                                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
-                                                        <Button size={size} onClick={() => window.open(project.url)}>Go to Source</Button>
+                                                        <Button size={size} onClick={() => window.open(project.github)}>Github Source</Button>
                                                         <Button size={size}>See Images</Button>
                                                     </div>
                                                 </div>
