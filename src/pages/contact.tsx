@@ -9,6 +9,20 @@ import { sleep } from '../utils/helper'
 
 const PoepleTalkingImg = require('../images/people-talking.png')
 
+const ContactSection = styled.div`
+    display: flex;
+    flex-direction: row-reverse;
+    width:100%;
+    height:100%;
+
+    @media only screen and (max-width:720px) {
+        flex-direction: column;
+        > div {
+            width: 100% !important; 
+        }
+    }
+`
+
 interface FormValues {
     fullName: string,
     emailAddress: string,
@@ -74,11 +88,11 @@ export default () => {
     return (
         <Section height={90}>
             <ValidationMessage showMessage={validationMsg.length > 0}>{validationMsg}</ValidationMessage>
-            <div style={{ display: 'flex', flexDirection: 'row-reverse', width:'100%' }}>
-                <div style={{ width: '40%', display: 'flex', justifyContent: 'center' }}>
+            <ContactSection>
+                <div style={{ width: '40%', display: 'flex', justifyContent: 'center', height: '100%' }}>
                     <img style={{ position: 'absolute', maxWidth: '235px', width: '100%', height: 'auto' }} src={PoepleTalkingImg} />
                 </div>
-                <div style={{ width: '60%' }}>
+                <div style={{ width: '60%', height: '100%' }}>
                     <Formik 
                         validationSchema={SchemaValidation}
                         onSubmit={async (values: FormValues) => sendContactMessage(values)}
@@ -102,7 +116,7 @@ export default () => {
                         )}
                     </Formik>
                 </div>
-            </div>
+            </ContactSection>
         </Section>
     )
 }

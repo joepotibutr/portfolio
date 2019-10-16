@@ -7,7 +7,6 @@ import styled from 'styled-components'
 const  GithubLogo = require('../assets/github-logo.png')
 const  LinkedinLogo = require('../assets/linkedin-letters.png')
 const  LetterLogo = require('../assets/envelope.png')
-
 const  IndividualPicture = require('../images/individual.png')
 
 const AboutPage = styled.div`
@@ -75,7 +74,7 @@ const AboutPage = styled.div`
             margin: 0 auto;
             max-width: 250px;
             svg {
-                transform: scale(2.5);
+                transform: scale(0.6);
             }
         }
 
