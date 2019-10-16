@@ -4,7 +4,7 @@ const experienceList = require('../data/experience-list.json')
 
 export default () => {
         return (
-          <Section height={40}>
+          <Section height={60}>
             <div>
               <h2>Experience</h2>
               {experienceList.map((exp: any) => (
