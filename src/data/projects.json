@@ -1,10 +1,19 @@
 [{
     "name": "Ecommerce Clone",
-    "github": "https://github.com",
+    "github": "https://github.com/vchrpng/ecommerce_buyer",
     "thumbnail": [],
     "link": "#",
     "techstack": ["react","redux","node","mongodb"],
-    "description": "Ecommerce Clone, Shopping cart and member system for customer and CMS platform for owner to manage stock",
+    "description": "Ecommerce Clone, Shopping cart, Authorization and checkout system for customer who wants to shopping online",
+    "year": "2017"
+},
+{
+    "name": "Stock Management",
+    "github": "https://github.com/vchrpng/ecommerce_admin",
+    "thumbnail": [],
+    "link": "#",
+    "techstack": ["react","redux","node","mongodb"],
+    "description": "Stock management for owner who want to add, remove, edit item in stocks and link it to customer site",
     "year": "2017"
 },
 {
