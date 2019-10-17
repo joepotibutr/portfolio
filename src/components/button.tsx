@@ -39,6 +39,10 @@ const ButtonStyled = styled.button<IButtonProps>`
     ${props => props.transparent && `
         background: transparent;
         color: black;
+        &:hover {
+            color: gray;
+            background:transparent;
+        }
     `}
 `
 
