@@ -15,6 +15,7 @@ const ProjectsList = styled.ul`
     /* grid-template-rows: 255px; */
     grid-gap: 10px;
     margin:0;
+    margin-bottom: 10px;
 
 `
 

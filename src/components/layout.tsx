@@ -34,7 +34,7 @@ const Layout = ({ children }: any) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, <span style={{ fontSize: '11px' }}>Joe Pothiboot</span>
+          © {new Date().getFullYear()}, <span style={{ fontSize: '15px' }}>Joe Pothiboot</span>
           {` `}
         </footer>
       </div>
