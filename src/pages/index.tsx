@@ -4,13 +4,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import GlobalStyle from '../components/global-style'
 import About from './about'
-import Experience from './experience'
 import { NAVIGATION } from "../constants";
 import Projects from "./projects";
 import Contact from "./contact";
 
 const aboutRef: React.RefObject<HTMLDivElement> = React.createRef()
-const expRef: React.RefObject<HTMLDivElement> = React.createRef()
 const projectsRef: React.RefObject<HTMLDivElement> = React.createRef()
 const contactRef: React.RefObject<HTMLDivElement> = React.createRef()
 
@@ -20,9 +18,6 @@ const gotoNavigation = (destination: NAVIGATION) => {
   switch(destination) {
     case NAVIGATION.ABOUT :
       destinationRef = aboutRef
-      break
-    case NAVIGATION.EXPERIENCE : 
-      destinationRef = expRef
       break
     case NAVIGATION.PROJECTS : 
       destinationRef = projectsRef
@@ -55,10 +50,6 @@ const IndexPage = () => {
 
         <div ref={projectsRef}>
           <Projects  />
-        </div>
-
-        <div ref={expRef}>
-          <Experience  />
         </div>
 
         <div ref={contactRef}>
