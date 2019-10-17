@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 
 interface Props {
     isShowing: boolean
@@ -10,11 +9,10 @@ interface Props {
 export default function Modal(props: Props) {
 
     return (
-      props.isShowing ? ReactDOM.createPortal(
-        <div id="portal">
+      props.isShowing ? 
+        <div>
             {props.children}
             <button onClick={props.hide}></button>
-        </div>, document.createElement('div')
-        ) : null
+        </div> : null
     )
 }
