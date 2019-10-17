@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Section } from '../components'
-import { Button } from '../components'
+import { Button, Section, Modal } from '../components'
 import { useOutsideClick } from '../utils/helper'
 import ReactResizeDetector from 'react-resize-detector'
 
@@ -102,11 +101,17 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
 
 export default () => {
         const [currentIdx,setOpen] = React.useState(-1)
+        const [isImageSliderOpen, openImageSlider] = React.useState(false)
         const outsideRef = React.useRef(null)
 
         useOutsideClick(outsideRef, () => {
             setOpen(-1)
         })
+
+        const toggle = () => {
+
+            openImageSlider(!isImageSliderOpen)
+        }
 
         return (
             <Section mobile={850} height={75}>
@@ -116,6 +121,9 @@ export default () => {
                         <ProjectsList>
                         {projects.map((project: any, index: number) => (
                                 <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
+                                    <Modal isShowing={isImageSliderOpen} hide={toggle}>
+                                        <h2>{project.name}</h2>
+                                    </Modal>
                                     <ReactResizeDetector handleWidth>
                                     {({ width }: { width: number }) => {
                                         const size = width <= 300 ? 'small' : 'normal'
@@ -146,7 +154,7 @@ export default () => {
                                                     </div>
                                                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
                                                         <Button size={size} onClick={() => window.open(project.github)}>Github Source</Button>
-                                                        <Button size={size} >See Images</Button>
+                                                        <Button size={size} onClick={toggle}>See Images</Button>
                                                     </div>
                                                 </div>
                                             </div>

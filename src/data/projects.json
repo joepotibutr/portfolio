@@ -1,7 +1,7 @@
 [{
     "name": "Ecommerce Clone",
     "github": "https://github.com/vchrpng/ecommerce_buyer",
-    "thumbnail": [],
+    "images": [],
     "link": "#",
     "techstack": ["react","redux","node","mongodb"],
     "description": "Ecommerce Clone, Shopping cart, Authorization and checkout system for customer who wants to shopping online",
@@ -10,7 +10,7 @@
 {
     "name": "Stock Management",
     "github": "https://github.com/vchrpng/ecommerce_admin",
-    "thumbnail": [],
+    "images": [],
     "link": "#",
     "techstack": ["react","redux","node","mongodb"],
     "description": "Stock management for owner who want to add, remove, edit item in stocks and link it to customer site",
@@ -19,7 +19,7 @@
 {
     "name": "Spotify Clone",
     "github": "https://github.com/vchrpng/spotify-player",
-    "thumbnail": [],
+    "images": [],
     "link": "#",
     "techstack": ["react","redux-saga","spotify-api"],
     "description": "Spotify Clone, Using this app like a real spotify with Spotify API",
