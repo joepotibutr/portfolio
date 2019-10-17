@@ -54,8 +54,7 @@ const TextArea = styled.textarea`
     width: 100%;
     height: 100%;
     font-size:15px;
-    padding:10px;
-    padding-left:15px;
+    padding:10px 15px;
 
     &:focus {
             outline: none;
@@ -112,7 +111,7 @@ export default () => {
                                 <FormInput name="message" errors={errors} touched={touched}>
                                     <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
                                 </FormInput>
-                                <div>
+                                <div style={{ marginTop: '10px' }}>
                                     {isLoading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
                                 </div>
                             </Form>

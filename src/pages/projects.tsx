@@ -129,7 +129,7 @@ export default () => {
                                                 <h5 style={{
                                                     display: 'flex',
                                                     justifyContent: 'space-between'
-                                                }}>{project.name} {width}<span>{project.year}</span></h5> 
+                                                }}>{project.name}<span>{project.year}</span></h5> 
                                                 <p>{project.description}</p>
                                             </div>
             
@@ -146,7 +146,7 @@ export default () => {
                                                     </div>
                                                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
                                                         <Button size={size} onClick={() => window.open(project.github)}>Github Source</Button>
-                                                        <Button size={size}>See Images</Button>
+                                                        <Button size={size} >See Images</Button>
                                                     </div>
                                                 </div>
                                             </div>

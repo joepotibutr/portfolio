@@ -3,7 +3,7 @@ import React from "react"
 
 import { NAVIGATION } from "../constants";
 import { SlideUp } from '../components'
-import {NavigationContext} from '../pages/index'
+import { NavigationContext } from '../pages/index'
 import ReactResizeDetector from 'react-resize-detector'
 import styled from 'styled-components'
 
