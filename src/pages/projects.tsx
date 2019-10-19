@@ -19,7 +19,7 @@ const ProjectsList = styled.ul`
 `
 
 const Tag = styled.span`
-    background: darkgray;
+    background: cornflowerblue;
     border-radius: 3px;
     font-size: 12px;
     font-weight: bold;

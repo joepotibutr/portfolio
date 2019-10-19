@@ -8,6 +8,7 @@ const  GithubLogo = require('../assets/github-logo.png')
 const  LinkedinLogo = require('../assets/linkedin-letters.png')
 const  LetterLogo = require('../assets/envelope.png')
 const  IndividualPicture = require('../images/individual.png')
+const  ArrowDown = require('../assets/arrow-down-sign-to-navigate.svg') 
 
 const AboutPage = styled.div`
     margin-bottom: 20px;
@@ -94,7 +95,7 @@ const AboutPage = styled.div`
 
 export default () => {
     return (
-        <Section height={60}>
+        <Section height={60} mobile={600}>
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people!</h1>
@@ -108,7 +109,7 @@ export default () => {
                     <div>
                         <NavigationContext.Consumer>
                         {(goto) => (
-                            <Button transparent onClick={() => goto(NAVIGATION.CONTACT)}>Get in touch <span style={{ color: 'lightblue'}}>v</span></Button>
+                            <Button transparent onClick={() => goto(NAVIGATION.CONTACT)}>Get in touch <span style={{ marginLeft: '5px',color: 'lightblue'}}><img style={{ maxWidth: '12px', margin: 0 }}  src={ArrowDown}/></span></Button>
                         )}
                         </NavigationContext.Consumer>
                     </div>

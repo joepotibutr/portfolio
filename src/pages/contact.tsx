@@ -88,7 +88,7 @@ export default () => {
     }
     
     return (
-        <Section height={90}>
+        <Section height={90} mobile={750}>
             <ValidationMessage showMessage={validationMsg.length > 0}>{validationMsg}</ValidationMessage>
             <ContactSection>
                 <div style={{ width: '40%', display: 'flex', justifyContent: 'center', height: '100%' }}>
