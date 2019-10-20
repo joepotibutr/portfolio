@@ -36,6 +36,14 @@ const ButtonStyled = styled.button<IButtonProps>`
         background:#0e2f4e;
     }
 
+    ${props => props.disabled && `
+         pointer-events: none;
+        opacity: 0.5;
+        filter: contrast(0.5);
+    `}
+
+   
+
     ${props => props.transparent && `
         background: transparent;
         color: black;
@@ -47,6 +55,7 @@ const ButtonStyled = styled.button<IButtonProps>`
 `
 
 interface IButtonProps {
+    disabled?:boolean
     children: React.ReactNode
     onClick?: () => void,
     type?: 'submit',

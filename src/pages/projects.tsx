@@ -154,7 +154,7 @@ export default () => {
                                                     </div>
                                                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
                                                         <Button size={size} onClick={() => window.open(project.github)}>Github Source</Button>
-                                                        <Button size={size} onClick={() => toggle(project.images)}>See Images</Button>
+                                                        <Button size={size} disabled={!project.images.length} onClick={() => toggle(project.images)}>See Images</Button>
                                                     </div>
                                                 </div>
                                             </div>
