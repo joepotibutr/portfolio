@@ -1,7 +1,7 @@
 [{
     "title": "Software Developer",
     "company": "ScreenCloud",
-    "description": "Helping build the digital signage browser integrations and CMS platform. Technologies used: React with TypeScript, ES6/ES7 including concepts like asynchronous programming (async/await), made some reusable component with CSS in JS, debugging and refactoring existing code",
+    "description": "Helping build the digital signage SaaS product browser integrations and CMS platform. Technologies used: React with TypeScript, ES6/ES7 including concepts like asynchronous programming (async/await), made some reusable component with CSS in JS, debugging and refactoring existing code",
     "date": "July 2018 - July 2019"
     },{
     "title": "Web Developer Intern",

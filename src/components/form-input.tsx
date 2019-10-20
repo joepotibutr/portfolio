@@ -10,7 +10,7 @@ interface Props {
 }
 
 const FormInputStyled = styled.div<{ error: boolean }>`
-    border: 2px solid ${props => props.error ? 'firebrick' : 'black'};
+    border: 2px solid ${props => props.error ? 'firebrick' : 'gainsboro'};
     border-radius: 4px;
     overflow: hidden;
 `
