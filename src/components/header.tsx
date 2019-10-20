@@ -52,14 +52,14 @@ const Burger = styled.div`
 
 
 const Header = ({ siteTitle }: any) => (
-  <SlideUp>
-    <HeaderStyled>
-      <HeaderOuterWrapper>
+
         <ReactResizeDetector handleWidth>
           {({ width }: any) => {
             const isMobile = width < 560
             return !isMobile ? (
-              <>
+              <SlideUp>
+              <HeaderStyled>
+                <HeaderOuterWrapper>
                 <div className="brand">
                 <h1 style={{ 
                     fontSize: '1em',
@@ -85,14 +85,14 @@ const Header = ({ siteTitle }: any) => (
                     ))}
                 </nav>)}
                 </NavigationContext.Consumer>
-              </>
-          ) : 
-              <Burger />
-          }}
-        </ReactResizeDetector>
         </HeaderOuterWrapper>
     </HeaderStyled>
   </SlideUp>
+          ) : 
+              <Burger />
+          }}
+          </ReactResizeDetector>
+
 )
 
 Header.propTypes = {
