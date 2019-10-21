@@ -61,47 +61,57 @@ const TextArea = styled.textarea`
         }
 
 `
-const Form = styled.form<{ isLoading: boolean }>`
-    pointer-events: ${props => props.isLoading ? 'none' : 'auto'};
+const Form = styled.form<{ isLoading: boolean, isMessageSent: boolean }>`
+    transition: .3s;
+    ${props => props.isMessageSent && `
+        filter: blur(2px);
+        pointer-events:none;
+    `}
+    
 `
 
-const ValidationMessage = styled.div<{ showMessage: boolean }>`
-    display: ${props => props.showMessage ? 'block' : 'none'};
-`
 
 export default () => {
+    const [isMessageSent, setMessageSent] = React.useState(false)
     const [isLoading, setLoading] = React.useState(false)
-    const [validationMsg, setValidationMsg] = React.useState('')
+
+    const resendMessage = () => {
+        setMessageSent(false)
+    }
 
     const sendContactMessage = (values: FormValues) => {
         setLoading(true)
         sleep(2000).then(() => {
             try {
                 axios.post(process.env.DATAFIRE!, values)
-                setValidationMsg('Sent successful')
             } catch {
-                setValidationMsg('Email is not valid')
             }
+            setMessageSent(true)
             setLoading(false)
-            setValidationMsg('')
         })
     }
     
     return (
         <Section height={90} mobile={750}>
-            <ValidationMessage showMessage={validationMsg.length > 0}>{validationMsg}</ValidationMessage>
             <ContactSection>
                 <div style={{ width: '40%', display: 'flex', justifyContent: 'center', height: '100%' }}>
                     <img style={{ position: 'absolute', maxWidth: '235px', width: '100%', height: 'auto' }} src={PoepleTalkingImg} />
                 </div>
                 <div style={{ width: '60%', height: '100%' }}>
+                    {isMessageSent && <div style={{
+                        zIndex: 1,
+                        position: 'absolute',
+                        transform: 'translate(151%, 232%)'
+                    }}>
+                        <Button onClick={resendMessage}>Resend Message</Button>
+                    </div>}
                     <Formik 
                         validationSchema={SchemaValidation}
                         onSubmit={async (values: FormValues) => sendContactMessage(values)}
                         initialValues={{ fullName: '', emailAddress: '', message: '' }}
                     >
                         {({ handleSubmit, handleChange, errors, touched }) => (
-                            <Form isLoading={isLoading} onSubmit={handleSubmit}>
+                            <Form isMessageSent={isMessageSent} isLoading={isLoading} onSubmit={handleSubmit}>
                                 <FormInput name="fullName" errors={errors} touched={touched}>
                                     <TextInput name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
                                 </FormInput>
@@ -112,7 +122,7 @@ export default () => {
                                     <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
                                 </FormInput>
                                 <div style={{ marginTop: '10px' }}>
-                                    {isLoading ? <h1>Loading</h1> : <Button type="submit">{validationMsg ? validationMsg : 'Submit'}</Button>}
+                                    {isLoading ? <h1>Loading</h1> : <Button type="submit">Submit</Button>}
                                 </div>
                             </Form>
                         )}
