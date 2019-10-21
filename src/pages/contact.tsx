@@ -9,6 +9,19 @@ import { sleep } from '../utils/helper'
 
 const PoepleTalkingImg = require('../images/people-talking.png')
 
+const Loader = styled.div`
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}`
+
 const ContactSection = styled.div`
     display: flex;
     flex-direction: row-reverse;
@@ -63,11 +76,20 @@ const TextArea = styled.textarea`
 `
 const Form = styled.form<{ isLoading: boolean, isMessageSent: boolean }>`
     transition: .3s;
-    ${props => props.isMessageSent && `
+    ${props => (props.isMessageSent) && `
         filter: blur(2px);
         pointer-events:none;
     `}
     
+`
+
+const SentMessageResult = styled.div<{ isMessageSent: boolean }>`
+    opacity: ${props => props.isMessageSent ? '1' : '0'};
+    transition: .3s;
+    z-index: 1;
+    position: absolute;
+    transform: translate(151%, 232%);
+
 `
 
 
@@ -76,6 +98,7 @@ export default () => {
     const [isLoading, setLoading] = React.useState(false)
 
     const resendMessage = () => {
+
         setMessageSent(false)
     }
 
@@ -91,6 +114,8 @@ export default () => {
         })
     }
     
+    const initialValues = { fullName: '', emailAddress: '', message: '' }
+
     return (
         <Section height={90} mobile={750}>
             <ContactSection>
@@ -98,31 +123,30 @@ export default () => {
                     <img style={{ position: 'absolute', maxWidth: '235px', width: '100%', height: 'auto' }} src={PoepleTalkingImg} />
                 </div>
                 <div style={{ width: '60%', height: '100%' }}>
-                    {isMessageSent && <div style={{
-                        zIndex: 1,
-                        position: 'absolute',
-                        transform: 'translate(151%, 232%)'
-                    }}>
+                    <SentMessageResult isMessageSent={isMessageSent}>
                         <Button onClick={resendMessage}>Resend Message</Button>
-                    </div>}
+                    </SentMessageResult>
                     <Formik 
                         validationSchema={SchemaValidation}
-                        onSubmit={async (values: FormValues) => sendContactMessage(values)}
-                        initialValues={{ fullName: '', emailAddress: '', message: '' }}
+                        onSubmit={async (values: FormValues, { resetForm, }) => {
+                            sendContactMessage(values)
+                            resetForm(initialValues)
+                        }}
+                        initialValues={initialValues}
                     >
-                        {({ handleSubmit, handleChange, errors, touched }) => (
-                            <Form isMessageSent={isMessageSent} isLoading={isLoading} onSubmit={handleSubmit}>
+                        {({ handleSubmit, handleChange, errors, touched, values }) => (
+                            <Form isMessageSent={isMessageSent} isLoading={isLoading}>
                                 <FormInput name="fullName" errors={errors} touched={touched}>
-                                    <TextInput name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
+                                    <TextInput value={values.fullName || ''} name="fullName"  onChange={handleChange} placeholder="Full name*" type="text"/>
                                 </FormInput>
                                 <FormInput name="emailAddress" errors={errors} touched={touched}>
-                                    <TextInput name="emailAddress" onChange={handleChange} placeholder="Email*" type="email"/>
+                                    <TextInput value={values.emailAddress || ''} name="emailAddress" onChange={handleChange} placeholder="Email*" type="email"/>
                                 </FormInput>
                                 <FormInput name="message" errors={errors} touched={touched}>
-                                    <TextArea name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
+                                    <TextArea value={values.message || ''} name="message" onChange={handleChange} placeholder="Message*" cols={30} rows={10}></TextArea>
                                 </FormInput>
                                 <div style={{ marginTop: '10px' }}>
-                                    {isLoading ? <h1>Loading</h1> : <Button type="submit">Submit</Button>}
+                                    <Button disabled={isLoading} onClick={handleSubmit} type="submit">{isLoading ? <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}> <Loader /> </div> : 'Submit' }</Button>
                                 </div>
                             </Form>
                         )}
