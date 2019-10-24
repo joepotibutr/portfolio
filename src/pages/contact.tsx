@@ -106,8 +106,9 @@ export default () => {
         setLoading(true)
         sleep(2000).then(() => {
             try {
-                console.log(process.env)
-                console.log(process.env.GATSBY_DATAFIRE)
+                console.log('ctx',process.env.CONTEXT)
+                console.log('netlify',process.env.NETLIFY)
+                console.log('datafire',process.env.GATSBY_DATAFIRE)
                 axios.post(process.env.GATSBY_DATAFIRE!, values)
             } catch {
                 console.log('err')
