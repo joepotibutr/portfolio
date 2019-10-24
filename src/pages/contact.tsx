@@ -106,8 +106,10 @@ export default () => {
         setLoading(true)
         sleep(2000).then(() => {
             try {
+                console.log(process.env.DATAFIRE)
                 axios.post(process.env.DATAFIRE!, values)
             } catch {
+                console.log('err')
             }
             setMessageSent(true)
             setLoading(false)
