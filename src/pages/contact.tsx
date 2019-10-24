@@ -106,8 +106,8 @@ export default () => {
         setLoading(true)
         sleep(2000).then(() => {
             try {
-                console.log(process.env.DATAFIRE)
-                axios.post(process.env.DATAFIRE!, values)
+                console.log(process.env.GATSBY_DATAFIRE)
+                axios.post(process.env.GATSBY_DATAFIRE!, values)
             } catch {
                 console.log('err')
             }
