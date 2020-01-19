@@ -2,7 +2,7 @@
     "name": "Ecommerce Clone",
     "github": "https://github.com/vchrpng/ecommerce_buyer",
     "images": [],
-    "link": "#",
+    "link": "https://joepothiboot-shop.netlify.com/",
     "techstack": ["react","redux","node","mongodb"],
     "description": "Ecommerce Clone, Shopping cart, Authorization and checkout system for customer who wants to shopping online",
     "year": "2017"
@@ -11,7 +11,7 @@
     "name": "Stock Management",
     "github": "https://github.com/vchrpng/ecommerce_admin",
     "images": [],
-    "link": "#",
+    "link": "",
     "techstack": ["react","redux","node","mongodb"],
     "description": "Stock management for owner who want to add, remove, edit item in stocks and link it to customer site",
     "year": "2017"
@@ -20,7 +20,7 @@
     "name": "Spotify Clone",
     "github": "https://github.com/vchrpng/spotify-player",
     "images": [],
-    "link": "#",
+    "link": "",
     "techstack": ["react","redux-saga","spotify-api"],
     "description": "Spotify Clone, Using this app like a real spotify with Spotify API",
     "year": "2018"

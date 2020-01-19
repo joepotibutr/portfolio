@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Section, Modal } from '../components'
+import { Button, Section } from '../components'
 import { useOutsideClick } from '../utils/helper'
 import ReactResizeDetector from 'react-resize-detector'
 
@@ -101,22 +101,14 @@ const ProjectItemBox = styled.li<{ active: boolean }>`
 
 export default () => {
         const [currentIdx,setOpen] = React.useState(-1)
-        const [images, openImageSlider] = React.useState([])
         const outsideRef = React.useRef(null)
 
         useOutsideClick(outsideRef, () => {
             setOpen(-1)
         })
 
-        const toggle = (img: []) => {
-            openImageSlider(img)
-        }
-
         return (
             <Section mobile={850} height={75}>
-                <Modal isShowing={images.length > 0} hide={() => toggle([])}>
-                    <h2>{images}</h2>
-                </Modal>
                 <div>
                     <h2>Projects</h2>
                     <div ref={outsideRef} >
@@ -148,13 +140,15 @@ export default () => {
                                             </div>
                                             <div className="detail">
                                                 <div className="detail-action-group">
+                                                    {project.link ?  
+                                                    <div>GIFS of this project</div> :
                                                     <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                                                         <h4>Production wasn't publish yet</h4>
-                                                        <p>You can see an example of source code and images of this project.</p>
-                                                    </div>
+                                                        <p>You can see an example of source code of this project.</p>
+                                                    </div>}
                                                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
                                                         <Button size={size} onClick={() => window.open(project.github)}>Github Source</Button>
-                                                        <Button size={size} disabled={!project.images.length} onClick={() => toggle(project.images)}>See Images</Button>
+                                                        <Button size={size} disabled={!project.link} onClick={() => window.open(project.link)}>Visit Site</Button>
                                                     </div>
                                                 </div>
                                             </div>
