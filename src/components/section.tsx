@@ -16,7 +16,7 @@ const SectionStyled = styled.section<SectionStyleProps>`
     padding: 0 20px;
     display: flex;
     justify-content: start;
-    align-items: start;        
+    align-items: center;        
     flex-direction: column;
     height: ${(props) => props.height * 100}px; 
     margin-bottom: 50px;
