@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React from "react"
 
 import { NAVIGATION } from "../constants";
@@ -45,12 +44,39 @@ const NavigationLink = styled.h1`
 `
 
 const Burger = styled.div`
+  .container {
+    display: inline-block;
+    cursor: pointer;
+  }
 
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  ${props => props.isOpen && `
+    .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .bar2 {opacity: 0;}
+
+    .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  `}
+  
 `
 
 const Navigation = ({ siteTitle }: any) => {
   return (
     <React.Fragment>
+     
       <div className="brand">
       <h1 style={{ 
           fontSize: '1em',
@@ -81,16 +107,24 @@ const Navigation = ({ siteTitle }: any) => {
 }
 
 
-const Header = ({ siteTitle }: any) => (
+const Header = ({ siteTitle }: any) => {
+  const [isOpen,openNavbar] = React.useState(false)
 
+  return (
       <HeaderStyled>
-        <HeaderOuterWrapper>
+        <HeaderOuterWrapper className="header-wrapper">
           <Navigation siteTitle={siteTitle}/>
         </HeaderOuterWrapper>
-        <Burger>
+        <Burger isOpen={isOpen} className="burger-menu">
+          <div className="container" onClick={() => openNavbar(!isOpen)}>
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
+          </div>
           <Navigation siteTitle={siteTitle}/>
         </Burger>
     </HeaderStyled>
-)
+  )
+}
 
 export default Header
