@@ -30,6 +30,7 @@ const Tag = styled.span`
 `
 
 const ProjectItemBox = styled.li<{ active: boolean }>`
+    background: white;
     list-style: none;
     padding: 20px;
     border-radius: 4px;
@@ -109,7 +110,7 @@ export default () => {
         })
 
         return (
-            <Section mobile={850} height={7}>
+            <Section mobile={960} height={7}>
                 <div style={{ width: '100%', maxWidth: '920px'}}>
                     <h2>Projects</h2>
                     <div ref={outsideRef}style={{ width: '100%'}}>
