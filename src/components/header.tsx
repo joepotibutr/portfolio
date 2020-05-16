@@ -8,12 +8,8 @@ const HeaderStyled = styled.header`
   top: 0;
   background: white;
   height: 80px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
   width: 100%;
   z-index: 99;
-  padding: 0px 20px 20px;
   margin: 0px auto;
   max-width: 920px;
 
@@ -38,6 +34,8 @@ const HeaderOuterWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 20px;
+
 
   
 `
@@ -57,6 +55,8 @@ const NavigationLink = styled.h1`
 `
 
 const Burger = styled.div<{ isOpen: boolean }>`
+  padding:20px;
+
   .container {
     display: inline-block;
     cursor: pointer;
@@ -71,16 +71,22 @@ const Burger = styled.div<{ isOpen: boolean }>`
   }
 
   ${props => props.isOpen && `
+
+    background: red;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
     .bar1 {
       -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-      transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-8px, 6px);
     }
 
     .bar2 {opacity: 0;}
 
     .bar3 {
       -webkit-transform: rotate(45deg) translate(-8px, -8px);
-      transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-9px, -8px);
     }
   `}
   
