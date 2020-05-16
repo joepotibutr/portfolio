@@ -110,9 +110,9 @@ export default () => {
 
         return (
             <Section mobile={850} height={7}>
-                <div>
+                <div style={{ width: '100%', maxWidth: '920px'}}>
                     <h2>Projects</h2>
-                    <div ref={outsideRef} >
+                    <div ref={outsideRef}style={{ width: '100%'}}>
                         <ProjectsList>
                         {projects.map((project: any, index: number) => (
                                 <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>

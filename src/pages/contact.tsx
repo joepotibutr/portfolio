@@ -27,6 +27,7 @@ const ContactSection = styled.div`
     flex-direction: row-reverse;
     width:100%;
     height:100%;
+    max-width: 920px;
 
     @media only screen and (max-width:720px) {
         flex-direction: column;
