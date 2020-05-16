@@ -43,7 +43,7 @@ const NavigationLink = styled.h1`
   }
 `
 
-const Burger = styled.div`
+const Burger = styled.div<{ isOpen: boolean }>`
   .container {
     display: inline-block;
     cursor: pointer;
