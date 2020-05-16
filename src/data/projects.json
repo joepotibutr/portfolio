@@ -20,7 +20,7 @@
     "name": "Spotify Clone",
     "github": "https://github.com/vchrpng/spotify-player",
     "images": [],
-    "link": "",
+    "link": "https://spotify-react-redux-saga.netlify.app/",
     "techstack": ["react","redux-saga","spotify-api"],
     "description": "Spotify Clone, Using this app like a real spotify with Spotify API",
     "year": "2018"
