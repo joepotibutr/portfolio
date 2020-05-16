@@ -34,8 +34,7 @@ const HeaderOuterWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0 20px;
-  padding: 20px;
+  padding: 20px 0;
 
   
 `
@@ -94,6 +93,7 @@ const Burger = styled.div<{ isOpen: boolean }>`
 `
 
 const Navigation = ({ siteTitle }: any) => {
+  console.log(siteTitle)
   return (
     <React.Fragment>
      

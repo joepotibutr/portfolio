@@ -17,7 +17,7 @@ const Layout = ({ children }: any) => {
         }}
       >
         <main>{children}</main>
-        <footer>
+        <footer style={{ padding: '20px' }}>
           © {new Date().getFullYear()}, <span style={{ fontSize: '15px' }}>Joe Pothiboot</span>
           {` `}
         </footer>
