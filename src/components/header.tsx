@@ -2,9 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 import { NAVIGATION } from "../constants";
-import { SlideUp } from '../components'
 import { NavigationContext } from '../pages/index'
-import ReactResizeDetector from 'react-resize-detector'
 import styled from 'styled-components'
 
 const HeaderStyled = styled.header`
@@ -50,57 +48,49 @@ const Burger = styled.div`
 
 `
 
+const Navigation = ({ siteTitle }: any) => {
+  return (
+    <React.Fragment>
+      <div className="brand">
+      <h1 style={{ 
+          fontSize: '1em',
+          margin: 0,
+          textDecoration: `none`, }}>
+
+          <span>{siteTitle} -</span>
+          <span style={{ fontWeight: 'lighter' }}> Full Stack Developer</span>
+        </h1>
+      </div>
+      <NavigationContext.Consumer>
+        {(goto) => (
+        <nav style={{ 
+          display: 'flex',
+          fontSize: '1em'
+          }}>
+            {Object.values(NAVIGATION).map(currentSection => (
+              <div key={currentSection} style={{ cursor: 'pointer' }} onClick={() => goto(currentSection)}>
+                <NavigationLink>
+                  {currentSection.charAt(0) + currentSection.slice(1).toLowerCase()}
+                </NavigationLink>
+              </div>
+            ))}
+        </nav>)}
+      </NavigationContext.Consumer>
+    </React.Fragment>
+  )
+}
+
 
 const Header = ({ siteTitle }: any) => (
 
-        <ReactResizeDetector handleWidth>
-          {({ width }: any) => {
-            const isMobile = width < 560
-            return !isMobile ? (
-              <SlideUp>
-              <HeaderStyled>
-                <HeaderOuterWrapper>
-                <div className="brand">
-                <h1 style={{ 
-                    fontSize: '1em',
-                    margin: 0,
-                    textDecoration: `none`, }}>
-        
-                    <span>{siteTitle} -</span>
-                    <span style={{ fontWeight: 'lighter' }}> Full Stack Developer</span>
-                  </h1>
-                </div>
-                <NavigationContext.Consumer>
-                {(goto) => (
-                <nav style={{ 
-                  display: 'flex',
-                  fontSize: '1em'
-                  }}>
-                    {Object.values(NAVIGATION).map(currentSection => (
-                      <div key={currentSection} style={{ cursor: 'pointer' }} onClick={() => goto(currentSection)}>
-                        <NavigationLink>
-                          {currentSection.charAt(0) + currentSection.slice(1).toLowerCase()}
-                        </NavigationLink>
-                      </div>
-                    ))}
-                </nav>)}
-                </NavigationContext.Consumer>
+      <HeaderStyled>
+        <HeaderOuterWrapper>
+          <Navigation siteTitle={siteTitle}/>
         </HeaderOuterWrapper>
+        <Burger>
+          <Navigation siteTitle={siteTitle}/>
+        </Burger>
     </HeaderStyled>
-  </SlideUp>
-          ) : 
-              <Burger />
-          }}
-          </ReactResizeDetector>
-
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
