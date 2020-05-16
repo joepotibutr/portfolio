@@ -6,29 +6,13 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
 
 const Layout = ({ children }: any) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
-          padding: '20px',
           margin: `0 auto`,
-          maxWidth: 1110,
           paddingTop: 0,
         }}
       >
@@ -38,7 +22,6 @@ const Layout = ({ children }: any) => {
           {` `}
         </footer>
       </div>
-    </>
   )
 }
 
