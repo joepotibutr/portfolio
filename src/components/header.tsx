@@ -11,7 +11,7 @@ const HeaderStyled = styled.header`
   width: 100%;
   z-index: 99;
   margin: 0px auto;
-  max-width: 920px;
+  max-width: 1110px;
 
     .burger-menu {
       display: none;
@@ -29,7 +29,7 @@ const HeaderStyled = styled.header`
 `
 
 const HeaderOuterWrapper = styled.div`
-  max-width: 920px;
+  max-width: 1110px;
   display: flex;
   align-items: center;
   justify-content: space-between;
