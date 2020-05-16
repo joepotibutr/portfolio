@@ -17,6 +17,19 @@ const HeaderStyled = styled.header`
   margin: 0px auto;
   max-width: 920px;
 
+    .burger-menu {
+      display: none;
+    }
+
+  @media (max-width: 576px) {
+    .header-wrapper {
+      display: none;
+    }
+    .burger-menu {
+      display: block;
+    }
+  }
+
 `
 
 const HeaderOuterWrapper = styled.div`
@@ -121,7 +134,7 @@ const Header = ({ siteTitle }: any) => {
             <div className="bar2"></div>
             <div className="bar3"></div>
           </div>
-          <Navigation siteTitle={siteTitle}/>
+          {isOpen && <Navigation siteTitle={siteTitle}/>}
         </Burger>
     </HeaderStyled>
   )
