@@ -34,11 +34,13 @@ const AboutPage = styled.div`
     }
 
     .tour-button {
+        margin: 20px 0;
         grid-column:1/2;
         grid-row: 2/3;
     }
 
     .social {
+        height:50px;
         display:flex;
         justify-content: flex-start;
         align-items: center;
@@ -88,6 +90,7 @@ const AboutPage = styled.div`
             grid-row: 3/4;
         }
         .social {
+
             justify-content: center;
             grid-row: 4/5;
         }
