@@ -11,11 +11,16 @@ const  IndividualPicture = require('../images/individual.png')
 const  ArrowDown = require('../assets/arrow-down-sign-to-navigate.svg') 
 
 const AboutPage = styled.div`
+    margin-top:100px;
     margin-bottom: 20px;
     display: grid;
     grid-template-columns: 40% 60%;
     height: 100%;
     width:100%;
+
+    @media (max-width: 576px) {
+        margin:0;
+    }
 
     .welcome {
         padding: 0;
@@ -74,9 +79,7 @@ const AboutPage = styled.div`
             grid-row:1/2;
             margin: 0 auto;
             max-width: 250px;
-            svg {
-                transform: scale(0.6);
-            }
+            position:relative;
         }
 
         .tour-button {
