@@ -18,8 +18,8 @@ const SectionStyled = styled.section<SectionStyleProps>`
     justify-content: start;
     align-items: start;        
     flex-direction: column;
-    height: ${(props) => props.height}vh; 
-    margin-bottom: 100px;
+    height: ${(props) => props.height * 100}px; 
+    margin-bottom: 50px;
 
     @media only screen and (max-width: 576px) {
         min-height: ${(props) => props.mobile ? props.mobile : 650}px; 

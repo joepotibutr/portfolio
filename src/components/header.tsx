@@ -34,8 +34,8 @@ const HeaderOuterWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin: 0 20px;
   padding: 20px;
-
 
   
 `
@@ -56,6 +56,7 @@ const NavigationLink = styled.h1`
 
 const Burger = styled.div<{ isOpen: boolean }>`
   padding:20px;
+  z-index:999;
 
   .container {
     display: inline-block;
