@@ -6,6 +6,7 @@ import ReactResizeDetector from 'react-resize-detector'
 
 
 const projects = require('../data/projects.json')
+const repoIcon = require('../images/icons8-repository-30.png')
 
 
 const ProjectsList = styled.ul`
@@ -126,10 +127,21 @@ export default () => {
                                                 height: '150px',
                                                 marginBottom: '20px'
                                             }}>
-                                                <h5 style={{
+                                                <h4 style={{
                                                     display: 'flex',
-                                                    justifyContent: 'space-between'
-                                                }}>{project.name}<span>{project.year}</span></h5> 
+                                                    justifyContent: 'space-between',
+                                                    alignItems:'center'
+                                                }}>
+                                                    <div style={{
+                                                           display: 'flex',
+                                                           justifyContent: 'space-between',
+                                                           alignItems:'center'
+                                                     }}>
+                                                        <img style={{ width: '20px' }} src={repoIcon} />
+                                                        <span style={{ marginLeft: '20px' }}>{project.name}</span>
+                                                    </div>
+                                                    <span>{project.year}</span>
+                                                </h4> 
                                                 <p>{project.description}</p>
                                             </div>
             
