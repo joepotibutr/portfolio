@@ -125,8 +125,16 @@ export default () => {
     }
   `)
     return (
-        <section>
-            <Header headerTitle={data.site.siteMetadata.title}/>
+        <section style={{
+            // boxShadow: '0px -3px 23px 0px',
+            position: 'relative'
+        }}>
+            <div style={{
+                maxWidth: '1110px',
+                margin: '0 auto',
+                paddingBottom: '50px'
+            }}>
+            <Header siteTitle={data.site.siteMetadata.title}/>
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people!</h1>
@@ -163,6 +171,8 @@ export default () => {
                     </a>
                 </div>
             </AboutPage>
+            </div>
+            
         </section>
     )
 }
