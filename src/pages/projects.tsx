@@ -109,7 +109,7 @@ export default () => {
         })
 
         return (
-            <Section mobile={850} height={75}>
+            <Section mobile={850} height={7}>
                 <div>
                     <h2>Projects</h2>
                     <div ref={outsideRef} >

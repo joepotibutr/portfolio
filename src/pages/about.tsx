@@ -101,7 +101,7 @@ const AboutPage = styled.div`
 
 export default () => {
     return (
-        <Section height={60} mobile={600}>
+        <Section height={6} mobile={600}>
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people!</h1>

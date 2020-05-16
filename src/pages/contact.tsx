@@ -118,7 +118,7 @@ export default () => {
     const initialValues = { fullName: '', emailAddress: '', message: '' }
 
     return (
-        <Section height={90} mobile={750}>
+        <Section height={5} mobile={750}>
             <ContactSection>
                 <div style={{ width: '40%', display: 'flex', justifyContent: 'center', height: '100%' }}>
                     <img style={{ position: 'absolute', maxWidth: '235px', width: '100%', height: 'auto' }} src={PoepleTalkingImg} />
