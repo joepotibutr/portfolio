@@ -19,7 +19,7 @@ const AboutPage = styled.div`
     grid-template-columns: 40% 60%;
     height: 100%;
     width:100%;
-    max-width:1110px;
+    max-width:800px;
 
     @media (max-width: 576px) {
         margin:0;
