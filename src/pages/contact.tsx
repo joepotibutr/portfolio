@@ -27,7 +27,7 @@ const ContactSection = styled.div`
     flex-direction: row-reverse;
     width:100%;
     height:100%;
-    max-width: 800px;
+    max-width: 720px;
 
     @media only screen and (max-width:720px) {
         flex-direction: column;
@@ -119,7 +119,7 @@ export default () => {
     const initialValues = { fullName: '', emailAddress: '', message: '' }
 
     return (
-        <Section height={5} mobile={800}>
+        <Section height={6} mobile={800}>
             <ContactSection>
                 <div style={{ width: '40%', display: 'flex', justifyContent: 'center', height: '100%' }}>
                     <img style={{ position: 'absolute', maxWidth: '235px', width: '100%', height: 'auto' }} src={PoepleTalkingImg} />
