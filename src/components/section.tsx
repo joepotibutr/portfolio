@@ -14,7 +14,7 @@ interface SectionStyleProps {
 
 const SectionStyled = styled.section<SectionStyleProps>`
     background: #fafafa;
-    padding: 100px 20px 0 20px;;
+    padding: 50px 20px 0 20px;;
     display: flex;
     justify-content: start;
     align-items: center;        
