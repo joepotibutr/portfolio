@@ -111,7 +111,7 @@ export default () => {
 
         return (
             <Section mobile={960} height={7}>
-                <div style={{ width: '100%', maxWidth: '920px'}}>
+                <div style={{ width: '100%', maxWidth: '720px'}}>
                     <h2>Projects</h2>
                     <div ref={outsideRef}style={{ width: '100%'}}>
                         <ProjectsList>
