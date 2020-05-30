@@ -5,8 +5,6 @@ import { Button, Wave } from '../components/'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../components/header"
-
 const  GithubLogo = require('../assets/github-logo.png')
 const  LinkedinLogo = require('../assets/linkedin-letters.png')
 const  LetterLogo = require('../assets/envelope.png')
@@ -20,6 +18,7 @@ const AboutPage = styled.div`
     height: 100%;
     width:100%;
     max-width:800px;
+    margin:0 auto;
 
     @media (max-width: 576px) {
         margin:0;
@@ -115,15 +114,7 @@ const AboutPage = styled.div`
 
 
 export default () => {
-    const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+
     return (
         <section style={{
             // boxShadow: '0px -3px 23px 0px',
@@ -134,7 +125,6 @@ export default () => {
                 margin: '0 auto',
                 paddingBottom: '50px'
             }}>
-            <Header siteTitle={data.site.siteMetadata.title}/>
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people!</h1>
