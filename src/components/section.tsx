@@ -13,14 +13,15 @@ interface SectionStyleProps {
 }
 
 const SectionStyled = styled.section<SectionStyleProps>`
+    background: #fafafa;
+    padding: 50px 20px 0 20px;;
     display: flex;
     justify-content: start;
-    align-items: start;        
+    align-items: center;        
     flex-direction: column;
-    height: ${(props) => props.height}vh; 
-    margin-top: 100px;
+    height: ${(props) => props.height * 100}px; 
 
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 576px) {
         min-height: ${(props) => props.mobile ? props.mobile : 650}px; 
     }
 `

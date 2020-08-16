@@ -6,6 +6,7 @@ import ReactResizeDetector from 'react-resize-detector'
 
 
 const projects = require('../data/projects.json')
+const repoIcon = require('../images/icons8-repository-30.png')
 
 
 const ProjectsList = styled.ul`
@@ -29,6 +30,7 @@ const Tag = styled.span`
 `
 
 const ProjectItemBox = styled.li<{ active: boolean }>`
+    background: white;
     list-style: none;
     padding: 20px;
     border-radius: 4px;
@@ -108,10 +110,10 @@ export default () => {
         })
 
         return (
-            <Section mobile={850} height={75}>
-                <div>
+            <Section mobile={960} height={7}>
+                <div style={{ width: '100%', maxWidth: '720px'}}>
                     <h2>Projects</h2>
-                    <div ref={outsideRef} >
+                    <div ref={outsideRef}style={{ width: '100%'}}>
                         <ProjectsList>
                         {projects.map((project: any, index: number) => (
                                 <ProjectItemBox key={project.name} active={index === currentIdx} onClick={() => setOpen(index)}>
@@ -126,10 +128,21 @@ export default () => {
                                                 height: '150px',
                                                 marginBottom: '20px'
                                             }}>
-                                                <h5 style={{
+                                                <h4 style={{
                                                     display: 'flex',
-                                                    justifyContent: 'space-between'
-                                                }}>{project.name}<span>{project.year}</span></h5> 
+                                                    justifyContent: 'space-between',
+                                                    alignItems:'center'
+                                                }}>
+                                                    <div style={{
+                                                           display: 'flex',
+                                                           justifyContent: 'space-between',
+                                                           alignItems:'center'
+                                                     }}>
+                                                        <img style={{ width: '20px' }} src={repoIcon} />
+                                                        <span style={{ marginLeft: '20px' }}>{project.name}</span>
+                                                    </div>
+                                                    <span>{project.year}</span>
+                                                </h4> 
                                                 <p>{project.description}</p>
                                             </div>
             
@@ -158,7 +171,7 @@ export default () => {
                             </ProjectItemBox>
                         ))}
                         </ProjectsList>
-                        <a style={{ color: '#1C5F9C' }} href="https://bitbucket.org/josphr/">See more projects</a>
+                        <a style={{ color: '#1C5F9C' }} href="https://github.com/vchrpng?tab=repositories">See more projects</a>
                     </div>
                 </div>
             </Section>

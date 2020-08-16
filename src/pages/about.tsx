@@ -1,8 +1,9 @@
 import React from 'react'
 import {NavigationContext} from './index'
 import { NAVIGATION } from '../constants';
-import { Button, Section, Wave } from '../components/'
+import { Button, Wave } from '../components/'
 import styled from 'styled-components'
+import { useStaticQuery, graphql } from "gatsby"
 
 const  GithubLogo = require('../assets/github-logo.png')
 const  LinkedinLogo = require('../assets/linkedin-letters.png')
@@ -16,11 +17,29 @@ const AboutPage = styled.div`
     grid-template-columns: 40% 60%;
     height: 100%;
     width:100%;
+    max-width:800px;
+    margin:0 auto;
+
+    @media (max-width: 576px) {
+        margin:0;
+    }
 
     .welcome {
         padding: 0;
         grid-column:1/2;
         grid-row:1/2;
+        
+        h1 {
+            font-size:5vw;
+        }
+
+
+        @media only screen and (max-width: 720px) { 
+            h1 {
+                font-size:50px;
+            }
+        }
+
     }
 
     .self-cartoon {
@@ -29,11 +48,13 @@ const AboutPage = styled.div`
     }
 
     .tour-button {
+        margin: 20px 0;
         grid-column:1/2;
         grid-row: 2/3;
     }
 
     .social {
+        height:50px;
         display:flex;
         justify-content: flex-start;
         align-items: center;
@@ -74,9 +95,7 @@ const AboutPage = styled.div`
             grid-row:1/2;
             margin: 0 auto;
             max-width: 250px;
-            svg {
-                transform: scale(0.6);
-            }
+            position:relative;
         }
 
         .tour-button {
@@ -85,6 +104,7 @@ const AboutPage = styled.div`
             grid-row: 3/4;
         }
         .social {
+
             justify-content: center;
             grid-row: 4/5;
         }
@@ -94,8 +114,17 @@ const AboutPage = styled.div`
 
 
 export default () => {
+
     return (
-        <Section height={60} mobile={600}>
+        <section style={{
+            // boxShadow: '0px -3px 23px 0px',
+            position: 'relative'
+        }}>
+            <div style={{
+                maxWidth: '1110px',
+                margin: '0 auto',
+                paddingBottom: '50px'
+            }}>
             <AboutPage>
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people!</h1>
@@ -116,7 +145,7 @@ export default () => {
                 </div>
                 <div className="self-cartoon" style={{ display: 'flex', alignItems: 'center',justifyContent:'center' }}>
                     <img style={{ maxWidth: '350px', width: '100%', height: 'auto' }} src={IndividualPicture} />
-                    <div style={{ position: 'absolute',zIndex: -1 }}>
+                    <div style={{ position: 'absolute' }}>
                         <Wave />
                     </div>
                 </div>
@@ -132,6 +161,8 @@ export default () => {
                     </a>
                 </div>
             </AboutPage>
-        </Section>
+            </div>
+            
+        </section>
     )
 }

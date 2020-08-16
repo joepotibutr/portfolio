@@ -2,8 +2,8 @@
     "name": "Ecommerce Clone",
     "github": "https://github.com/vchrpng/ecommerce_buyer",
     "images": [],
-    "link": "https://joepothiboot-shop.netlify.com/",
-    "techstack": ["react","redux","node","mongodb"],
+    "link": "https://ecommerce-stripe-react.netlify.app/",
+    "techstack": ["react","redux","node","mongodb","stripe"],
     "description": "Ecommerce Clone, Shopping cart, Authorization and checkout system for customer who wants to shopping online",
     "year": "2017"
 },
@@ -20,7 +20,7 @@
     "name": "Spotify Clone",
     "github": "https://github.com/vchrpng/spotify-player",
     "images": [],
-    "link": "",
+    "link": "https://spotify-react-redux.netlify.app/",
     "techstack": ["react","redux-saga","spotify-api"],
     "description": "Spotify Clone, Using this app like a real spotify with Spotify API",
     "year": "2018"

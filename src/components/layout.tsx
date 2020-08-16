@@ -6,39 +6,23 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
 
 const Layout = ({ children }: any) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
-          padding: '20px',
           margin: `0 auto`,
-          maxWidth: 920,
           paddingTop: 0,
+          marginTop: '100px'
         }}
       >
         <main>{children}</main>
-        <footer>
+        <footer style={{ padding: '20px' }}>
           © {new Date().getFullYear()}, <span style={{ fontSize: '15px' }}>Joe Pothiboot</span>
           {` `}
         </footer>
       </div>
-    </>
   )
 }
 
