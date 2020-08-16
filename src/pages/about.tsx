@@ -3,7 +3,7 @@ import {NavigationContext} from './index'
 import { NAVIGATION } from '../constants';
 import { Button, Wave } from '../components/'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from "gatsby"
+
 
 const  GithubLogo = require('../assets/github-logo.png')
 const  LinkedinLogo = require('../assets/linkedin-letters.png')
