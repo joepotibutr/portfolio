@@ -133,7 +133,7 @@ export default () => {
                 </div>
                 <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'start' }}>
                     <div style={{ marginRight: '20px' }}>
-                        <Button onClick={() => window.open('https://drive.google.com/file/d/1mtIi-vuGmcSdBQV_sUckxdF9Osxhp-Ni/view?usp=sharing')}>View resume</Button>
+                        <Button onClick={() => window.open('https://drive.google.com/file/d/1kzLHklqBqoSfJefzFTJbLFLrTMAa49OB/view?usp=sharing')}>View resume</Button>
                     </div>
                     <div>
                         <NavigationContext.Consumer>
