@@ -154,7 +154,7 @@ export default () => {
                                             <div className="detail">
                                                 <div className="detail-action-group">
                                                     {project.link ?  
-                                                    <div>GIFS of this project</div> :
+                                                    null :
                                                     <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                                                         <h4>Production wasn't publish yet</h4>
                                                         <p>You can see an example of source code of this project.</p>
