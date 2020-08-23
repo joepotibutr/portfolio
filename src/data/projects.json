@@ -4,7 +4,7 @@
     "images": [],
     "link": "https://ecommerce-stripe-react.netlify.app/",
     "techstack": ["react","redux","node","mongodb","stripe"],
-    "description": "Ecommerce Clone, Shopping cart, Authorization and checkout system for customer who wants to shopping online",
+    "description": "Ecommerce Clone, Shopping cart, and checkout to the payment system for a customer who wants to shop online",
     "year": "2017"
 },
 {
@@ -13,7 +13,7 @@
     "images": [],
     "link": "",
     "techstack": ["react","redux","node","mongodb"],
-    "description": "Stock management for owner who want to add, remove, edit item in stocks and link it to customer site",
+    "description": "Stock management for the owner who wants to add, remove, edit an item in stocks and communicate data through the same API as customer site.",
     "year": "2017"
 },
 {
@@ -22,7 +22,7 @@
     "images": [],
     "link": "https://spotify-react-redux.netlify.app/",
     "techstack": ["react","redux-saga","spotify-api"],
-    "description": "Spotify Clone, Using this app like a real spotify with Spotify API",
+    "description": "Spotify Clone, make it look like the original Spotify player website.",
     "year": "2018"
 }
 ]
