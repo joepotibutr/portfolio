@@ -156,8 +156,8 @@ export default () => {
                                                     {project.link ?  
                                                     null :
                                                     <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                                                        <h4>Production wasn't publish yet</h4>
-                                                        <p>You can see an example of source code of this project.</p>
+                                                        <h4>Production wasn't published yet</h4>
+                                                        <p>You can see an example of the source code of this project by hitting the button below.</p>
                                                     </div>}
                                                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
                                                         <Button size={size} onClick={() => window.open(project.github)}>Github Source</Button>
