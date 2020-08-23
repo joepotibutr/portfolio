@@ -129,7 +129,7 @@ export default () => {
                 <div className="welcome" style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                     <h1>Hi people!</h1>
                     <h3>I'm Joe and I'm a full stack web developer</h3>
-                    <p style={{ margin: 0 }}>I'm a developer with extensive experience from many projects and full-time career. Latest web development technologies that was used to provide business needs.</p>
+                    <p style={{ margin: 0 }}>I'm a developer with extensive experience from many projects and a full-time career. Latest web development technologies that were used to provide business needs.</p>
                 </div>
                 <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'start' }}>
                     <div style={{ marginRight: '20px' }}>
