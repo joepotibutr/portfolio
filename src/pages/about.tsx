@@ -133,7 +133,7 @@ export default () => {
                 </div>
                 <div className="tour-button" style={{ width: '100%', display: 'flex',justifyContent: 'start' }}>
                     <div style={{ marginRight: '20px' }}>
-                        <Button onClick={() => window.open('https://drive.google.com/file/d/1luvtHkDGtz0SVbDKrqP4l9XPLJWxSisD/view?usp=drivesdk')}>View resume</Button>
+                        <Button onClick={() => window.open('https://www.dropbox.com/s/tb4hwj9xzz7umbv/Watcharapong%20Pothiboot%20-%20Resume.pdf?dl=0')}>View resume</Button>
                     </div>
                     <div>
                         <NavigationContext.Consumer>
