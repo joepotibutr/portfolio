@@ -171,7 +171,7 @@ export default () => {
                             </ProjectItemBox>
                         ))}
                         </ProjectsList>
-                        <a style={{ color: '#1C5F9C' }} href="https://github.com/vchrpng?tab=repositories">See more projects</a>
+                        <a style={{ color: '#1C5F9C' }} href="https://github.com/joepotibutr?tab=repositories">See more projects</a>
                     </div>
                 </div>
             </Section>

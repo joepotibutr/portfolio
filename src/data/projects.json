@@ -1,6 +1,6 @@
 [{
     "name": "Ecommerce Clone",
-    "github": "https://github.com/vchrpng/ecommerce_buyer",
+    "github": "https://github.com/joepotibutr/ecommerce_buyer",
     "images": [],
     "link": "https://ecommerce-stripe-react.netlify.app/",
     "techstack": ["react","redux","node","mongodb","stripe"],
@@ -9,7 +9,7 @@
 },
 {
     "name": "Stock Management",
-    "github": "https://github.com/vchrpng/ecommerce_admin",
+    "github": "https://github.com/joepotibutr/ecommerce_admin",
     "images": [],
     "link": "",
     "techstack": ["react","redux","node","mongodb"],
@@ -18,7 +18,7 @@
 },
 {
     "name": "Spotify Clone",
-    "github": "https://github.com/vchrpng/spotify-player",
+    "github": "https://github.com/joepotibutr/spotify-player",
     "images": [],
     "link": "https://spotify-react-redux.netlify.app/",
     "techstack": ["react","redux-saga","spotify-api"],
